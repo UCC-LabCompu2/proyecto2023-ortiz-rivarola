@@ -1,4 +1,4 @@
-#tituloPrincipal{
+h5{
     text-align: left;
     font-size: 100px;
     font-family: 'Kalam', cursive;
@@ -7,7 +7,7 @@ body{
     text-align: justify-all;
     font-family: "Calibri Light";
     background: lightskyblue;
-    line-height: 20%;
+    line-height: 15px;
 }
 #subtitulo{
     text-align: -webkit-right;
@@ -17,19 +17,6 @@ body{
 }
 #segundoTexto{
     text-align: right;
-}
-#e1{
-    float: left;
-    width: 25%;
-}
-#e3{
-    float: right;
-    width: 30%;
-}
-#e2{
-    width: 30%;
-    margin-left: 110px;
-    margin-right: 40px;
 }
 #t1{
     text-align: left;
@@ -48,34 +35,66 @@ body{
     line-height: 15%;
     margin: 10px;
 }
-.terceraF{
-    position: relative;
-    display: inline-block;
-}
 .f3{
     font-weight: bold;
-    position: absolute;
+    float: right;
     top:70px;
-    left: 380px;
+    left: 350px;
     font-size: 12px;
-}
-.segundaF{
-    position: relative;
-    display: inline-block;
+    background-color: #feab5a;
+    padding: 20px;
+    border-radius: 5px;
 }
 
 .f2{
     font-weight: bold;
-    position: absolute;
+    text-align: center;
     top:70px;
-    left: 500px;
+    left: 350px;
     font-size: 12px;
+    background-color: #feab5a;
+    padding: 20px;
+    border-radius: 5px;
+}
+.f1{
+    font-weight: bold;
+    float: left;
+    top:70px;
+    left: 380px;
+    font-size: 12px;
+    background-color: #feab5a;
+    padding: 20px;
+    border-radius: 5px;
+}
+.f3:hover{
+    font-size: 1.2em;
+    background-color: darksalmon;
+    -webkit-transition: background-color 2s linear;
+    transition: background-color 2s linear;
+}
+.f1:hover{
+    font-size: 1.2em;
+    background-color: darksalmon;
+    -webkit-transition: background-color 2s linear;
+    transition: background-color 2s linear;
+}
+.f2:hover{
+    font-size: 1.2em;
+    background-color: darksalmon;
+    -webkit-transition: background-color 2s linear;
+    transition: background-color 2s linear;
 }
 #gif{
     float: left;
     width: 50%;
+    border-radius: 15px;
+    margin: 3px 4px;
+    padding: 15px;
 }
 #pensativo{
     float: right;
     width: auto;
+}
+ul{
+    line-height: 25px;
 }
