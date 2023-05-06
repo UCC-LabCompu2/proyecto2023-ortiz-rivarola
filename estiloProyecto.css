@@ -91,3 +91,22 @@ body{
 ul{
     line-height: 25px;
 }
+
+nav {
+    font-family: 'Caveat', cursive;
+    text-align: right;
+    padding: 30px 50px;
+}
+
+nav > a:link, a:visited {
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 40px;
+}
+
+nav > a:hover {
+    text-decoration: underline;
+    font-size: 1.2em;
+    font-weight: bold;
+}
