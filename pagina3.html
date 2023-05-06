@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Caida Libre</title>
+    <link rel="shortcut icon" href="imagenes/icono.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estiloProyecto.css" type="text/css">
+</head>
+<body>
+<header>
+    <h1 id="tituloPrincipal">CAIDA LIBRE</h1>
+</header>
+
+Velocidad Final
+<form>
+    <p>
+        <label for="vo"> V<sub>o</sub>:</label>
+        <input type="text" name="velocidadinicial" id="vo">
+    </p>
+        <p>
+            <label for="tiempo"> t:</label>
+            <input type="text" name="tiempo" id="tiempo">
+        </p>
+    <p>
+        <label for="gravedad"> g:</label>
+        <select name="gravedad" id="gravedad">
+            <option value="10"> 10m/s <sup> 2 </sup> </option>
+            <option value="9.8"> 9.8m/s<sup> 2 </sup> </option>
+        </select>
+    </p>
+    <p>
+        <button>
+            Calcular
+        </button>
+    </p>
+</form>
+
+</body>
+</html>
