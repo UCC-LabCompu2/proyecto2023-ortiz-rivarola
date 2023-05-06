@@ -25,13 +25,15 @@
 Velocidad Final
 <form>
     <p>
-        <label for="vo"> V<sub>o</sub>:</label>
-        <input type="text" name="velocidadinicial" id="vo">
+        <label for="velocidadInicial">V<sub>o</sub>:</label>
+        <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
+        <label for="velocidadInicial"> </label>
     </p>
-        <p>
-            <label for="tiempo"> t:</label>
-            <input type="text" name="tiempo" id="tiempo">
-        </p>
+    <p>
+        <label for="tiempo">t: </label>
+        <input id="tiempo" type="number" max="3600" min="0" name="tiempo"/>
+        <label for="tiempo"></label>
+    </p>
     <p>
         <label for="gravedad"> g:</label>
         <select name="gravedad" id="gravedad">
@@ -45,5 +47,18 @@ Velocidad Final
         </button>
     </p>
 </form>
+<footer id="contacto">
+    <div class="piedepagina">
+        <div class="mail">
+            <h4>Contacto</h4>
+            <p>
+                Paulina Ortiz: 2202058@ucc.edu.ar
+            </p>
+            <p>
+                Valentina Rivarola: 2215233@ucc.edu.ar
+            </p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
