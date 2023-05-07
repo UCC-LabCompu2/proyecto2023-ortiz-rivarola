@@ -10,7 +10,9 @@ body{
     line-height: 15px;
 }
 .portada{
-    background-image: url("imagenes/por");
+    background-image: url("imagenes/Portada.jpeg");
+    background-size: cover;
+    background-attachment: scroll;
 }
 #subtitulo{
     text-align: -webkit-right;
