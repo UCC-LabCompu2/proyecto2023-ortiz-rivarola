@@ -108,6 +108,10 @@ nav {
     font-family: 'Caveat', cursive;
     text-align: right;
     padding: 30px 50px;
+    background-color: whitesmoke;
+    background-size: 50%;
+    width: 95%;
+    font-size: 1.2em;
 }
 
 nav > a:link, a:visited {
@@ -126,4 +130,18 @@ footer{
     text-align: center;
     font-family: "Calibri Light";
     font-size: 15px;
+}
+#start{
+    color: white;
+    text-align: center;
+}
+button{
+    width: 15%;
+    background-color: black;
+    border-radius: 5px;
+    position: absolute;
+    top: 75%;
+    right: 100%;
+    left: 43%;
+    bottom: 15%;
 }
