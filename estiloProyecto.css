@@ -9,6 +9,9 @@ body{
     background: lightskyblue;
     line-height: 15px;
 }
+.portada{
+    background-image: url("imagenes/por");
+}
 #subtitulo{
     text-align: -webkit-right;
     font-size: 80px;
