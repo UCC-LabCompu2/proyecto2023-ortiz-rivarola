@@ -1,4 +1,4 @@
-h1{
+h1, h5{
     text-align: left;
     font-size: 100px;
     font-family: 'Kalam', cursive;
@@ -91,8 +91,8 @@ body{
 .f1:hover, .f2:hover, .f3:hover{
     font-size: 1.2em;
     background-color: mediumpurple;
-    -webkit-transition: background-color 2s linear;
-    transition: background-color 2s linear;
+    -webkit-transition: background-color 0.5s linear;
+    transition: background-color 0.5s linear;
 }
 #gif{
     float: left;
@@ -127,13 +127,25 @@ nav > a:hover {
     font-weight: bold;
 }
 footer{
-    text-align: center;
+    text-align: left;
     font-family: "Calibri Light";
     font-size: 15px;
+    background-color: black;
+}
+.piedepagina{
+    width: 50%;
+    padding: 0.5% 0;
+    color: whitesmoke;
+}
+.mail{
+    font-family: Calibri;
+    margin-left: 10px;
 }
 #start{
+    font-family: 'Amatic SC', cursive;
     color: white;
-    text-align: center;
+    text-align:justify-all;
+    font-size: 1.5em;
 }
 button{
     width: 15%;
@@ -144,4 +156,11 @@ button{
     right: 100%;
     left: 43%;
     bottom: 15%;
+}
+#opciones {
+    font-family: 'Nunito', sans-serif;;
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 40px;
 }
