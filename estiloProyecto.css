@@ -19,11 +19,20 @@ h3{
 #pregunta{
     font-size: 30px;
 }
-#ardilla{
-    margin-left: 40px;
+.paracaidismo{
+    margin-left: 27em;
+    padding-bottom: 10px;
+}
+#caida{
+    position: relative;
 }
 form{
-    margin-left: 20px;
+    margin-top: 20px;
+}
+#po, #vo, #t{
+    margin-left: 40em;
+    margin-top: 2em;
+    margin-bottom: 3em;
 }
 body{
     margin: 0 0 0 0;

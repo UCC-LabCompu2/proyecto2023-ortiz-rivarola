@@ -36,12 +36,13 @@
         <li><a href="#Tiempo">Tiempo</a></li>
     </ul>
 </div>
-
-<img src="imagenes/gifparcaidismo.gif.crdownload" alt="persona tirandose de un precipicio">
-
+<div class="paracaidismo" id="caida">
+<img src="imagenes/gifparcaidismo.gif" alt="persona tirandose de un precipicio">
+</div>
 
 <form id="VelocidadFinal">
     <h2>VELOCIDAD FINAL</h2>
+    <div id="vo">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
         <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
@@ -64,13 +65,12 @@
             <a id="C1" href="pagina2.html">Calcular</a>
         </button>
     </p>
+    </div>
 </form>
-<div id="ardilla">
-<img src="imagenes/gif%20ardilla.gif" alt="ardilla">
-</div>
 
 <form id="PosicionFinal">
     <h2>POSICION FINAL</h2>
+    <div id="po">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
         <input id="vo" type="number" max="100" min="0" name="velocidadInicial"/>
@@ -84,7 +84,7 @@
     <p>
         <label for="yo"> Y<sub>0</sub>:</label>
         <input id="altura" type="number" max="500" min="0" name="altura"/>
-        <input type="text" name="alturainicial" id="y">
+        <label for="altura"></label>
     </p>
     <p>
         <label for="gravedad"> g:</label>
@@ -98,6 +98,7 @@
             <a id="C2" href="pagina2.html">Calcular</a>
         </button>
     </p>
+    </div>
 </form>
 <p>
 
@@ -105,6 +106,7 @@
 
 <form id="Tiempo">
    <h2>TIEMPO</h2>
+    <div id="t">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
         <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
@@ -129,6 +131,7 @@
     <button id="boton3">
         <a id="C3" href="pagina2.html">Calcular</a>
     </button>
+    </div>
 </form>
 <footer id="contacto">
     <div class="piedepagina">
