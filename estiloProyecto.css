@@ -4,6 +4,10 @@ h1, h5{
     font-family: 'Kalam', cursive;
 }
 body{
+    margin-bottom: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-top: 0;
     text-align: justify-all;
     font-family: "Calibri Light";
     background: lightskyblue;
@@ -36,7 +40,7 @@ body{
     margin-left: 500px;
 }
 #t1{
-    text-align: left;
+    text-align: center;
     font-size: 20px;
     line-height: 15%;
     margin: 10px;
@@ -47,7 +51,7 @@ body{
     line-height: 15%;
 }
 #t3{
-    text-align: right;
+    text-align: center;
     font-size: 20px;
     line-height: 15%;
     margin: 10px;
@@ -60,22 +64,23 @@ body{
     position: relative;
     height: 5em;
     width: 10em;
-    top: 10px;
-    display: inline-block;
-    margin-left: 40px;
+    top: 75%;
+    right: 100%;
+    left: 43%;
+    bottom: 15%;
 }
 .f2{
-    text-align: center;
+    text-align: justify-all;
     font-weight: bold;
     background-color:  sandybrown;
     border-radius: 10px;
     position: relative;
     height: 5em;
     width: 10em;
-    top: 10px;
-    display: inline-block;
-    margin-left: 15px;
-    margin-right: 15px;
+    top: 80%;
+    right: 50%;
+    left: 43%;
+    bottom: 15%;
 }
 .f3{
     text-align: center;
@@ -85,8 +90,10 @@ body{
     position: relative;
     height: 5em;
     width: 10em;
-    top: 10px;
-    display: inline-block;
+    top: 90%;
+    right: 100%;
+    left: 43%;
+    bottom: 15%;
 }
 .f1:hover, .f2:hover, .f3:hover{
     font-size: 1.2em;
@@ -97,8 +104,7 @@ body{
 #gif{
     float: left;
     width: 50%;
-    margin: 3px 4px;
-    padding: 15px;
+    margin-left: 20%;
 }
 ul{
     line-height: 25px;
@@ -142,10 +148,11 @@ footer{
     margin-left: 10px;
 }
 #start{
-    font-family: 'Amatic SC', cursive;
+    font-family: "Calibri Light";
     color: white;
-    text-align:justify-all;
+    text-align:center;
     font-size: 1.5em;
+
 }
 button{
     width: 15%;
