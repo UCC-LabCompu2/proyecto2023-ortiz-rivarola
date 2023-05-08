@@ -4,10 +4,16 @@ h1, h5{
     font-family: 'Kalam', cursive;
 }
 h2{
-    text-align: left;
-    font-size: 100px;
+    text-align: center;
+    font-size: 50px;
     font-weight: bold;
     font-family: 'Amatic SC', cursive;
+}
+h3{
+    margin-left: 40px;
+}
+#ardilla{
+    margin-left: 40px;
 }
 body{
     margin: 0 0 0 0;
@@ -81,9 +87,9 @@ body{
 }
 
 #gif{
-    float: left;
-    width: 50%;
-    margin-left: 20%;
+    margin-top: 0;
+    position: relative;
+    margin-left: 5%;
 }
 ul{
     line-height: 25px;
@@ -159,5 +165,11 @@ button{
     color: black;
     font-weight: 300;
     text-decoration: none;
-    margin-right: 40px;
+    margin-left: 40px;
+}
+#opciones:visited{
+    color: black;
+    font-weight: 300;
+    text-decoration: none;
+    margin-left: 40px;
 }
