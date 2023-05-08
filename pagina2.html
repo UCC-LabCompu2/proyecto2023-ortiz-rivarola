@@ -8,14 +8,17 @@
     <link rel="shortcut icon" href="imagenes/icono.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="estiloProyecto.css" type="text/css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&family=Nunito:wght@300&display=swap"
+          rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
+          rel="stylesheet">
 
 </head>
 <body>
@@ -25,81 +28,85 @@
         <a href="index.html">INICIO</a>
         <a href="pagina1.html">TEORIA</a>
     </nav>
-    <h1> CAIDA LIBRE </h1>
 </header>
-
+<h1> CAIDA LIBRE </h1>
 <h3 id="pregunta"> ¿Qué desea calcular? </h3>
 <div id="opciones">
     <nav id="ops">
-    <ul>
-        <li><a href="#VelocidadFinal">Velocidad Final</a></li>
-        <li><a href="#PosicionFinal">Posicion Final</a></li>
-        <li><a href="#Tiempo">Tiempo</a></li>
-    </ul>
+        <ul>
+            <li><a href="#VelocidadFinal">Velocidad Final</a></li>
+            <li><a href="#PosicionFinal">Posicion Final</a></li>
+            <li><a href="#Tiempo">Tiempo</a></li>
+        </ul>
     </nav>
 </div>
 <div class="paracaidismo" id="caida">
-<img src="imagenes/gifparcaidismo.gif" alt="persona tirandose de un precipicio">
+    <img src="imagenes/gifparcaidismo.gif" alt="persona tirandose de un precipicio">
 </div>
 
 <form id="VelocidadFinal">
     <h2 class="velocidadfinal">VELOCIDAD FINAL</h2>
     <div id="vo">
-    <p>
-        <label for="velocidadInicial">V<sub>o</sub>:</label>
-        <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
-        <label for="velocidadInicial"></label>
-    </p>
-    <p>
-        <label for="tiempo">t: </label>
-        <input id="time" type="number" max="3600" min="0" name="tiempo">
-        <label for="tiempo"></label>
-    </p>
-    <p>
-        <label for="gravedad"> g:</label>
-        <select name="gravedad" id="g">
-            <option value="10"> 10m/s^2 </option>
-            <option value="9.8"> 9.8m/s^2 </option>
-        </select>
-    </p>
-    <p>
-        <button id="boton1">
-            <a id="C1" href="#VelocidadFinal">Calcular</a>
-        </button>
-    </p>
+        <p>
+            <label for="velocidadInicial">V<sub>o</sub>:</label>
+            <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
+            <label for="velocidadInicial"></label>
+            m/s
+        </p>
+        <p>
+            <label for="tiempo">t: </label>
+            <input id="time" type="number" max="3600" min="0" name="tiempo">
+            <label for="tiempo"></label>
+            s
+        </p>
+        <p>
+            <label for="gravedad"> g:</label>
+            <select name="gravedad" id="g">
+                <option value="10"> 10m/s^2</option>
+                <option value="9.8"> 9.8m/s^2</option>
+            </select>
+        </p>
+        <p>
+            <button id="boton1">
+                <a id="C1" href="#VelocidadFinal">Calcular</a>
+            </button>
+        </p>
     </div>
 </form>
 
 <form id="PosicionFinal">
     <h2 class="posicionfinal">POSICION FINAL</h2>
     <div id="po">
-    <p>
-        <label for="velocidadInicial">V<sub>o</sub>:</label>
-        <input id="v0" type="number" max="100" min="0" name="velocidadInicial"/>
-        <label for="velocidadInicial"> </label>
-    </p>
-    <p>
-        <label for="tiempo">t: </label>
-        <input id="ti" type="number" max="3600" min="0" name="tiempo"/>
-        <label for="tiempo"></label>
-    </p>
-    <p>
-        <label for="yo"> Y<sub>0</sub>:</label>
-        <input id="altura" type="number" max="500" min="0" name="altura"/>
-        <label for="altura"></label>
-    </p>
-    <p>
-        <label for="gravedad"> g:</label>
-        <select name="gravedad" id="gravedad">
-            <option value="10"> 10m/s^2</option>
-            <option value="9.8"> 9.8m/s^2</option>
-        </select>
-    </p>
-    <p>
-        <button id="boton2">
-            <a id="C2" href="#PosicionFinal">Calcular</a>
-        </button>
-    </p>
+        <p>
+            <label for="velocidadInicial">V<sub>o</sub>:</label>
+            <input id="v0" type="number" max="100" min="0" name="velocidadInicial"/>
+            <label for="velocidadInicial"> </label>
+            m/s
+        </p>
+        <p>
+            <label for="tiempo">t: </label>
+            <input id="ti" type="number" max="3600" min="0" name="tiempo"/>
+            <label for="tiempo"></label>
+            s
+        </p>
+        <p>
+            <label for="yo"> Y<sub>0</sub>:</label>
+            <input id="altura" type="number" max="500" min="0" name="altura"/>
+            <label for="altura"></label>
+            m
+        </p>
+        <p>
+            <label for="gravedad"> g:</label>
+            <select name="gravedad" id="gravedad">
+                <option value="10"> 10m/s^2</option>
+                <option value="9.8"> 9.8m/s^2</option>
+            </select>
+        </p>
+        <p>
+            <button id="boton2">
+                <a id="C2" href="#PosicionFinal">Calcular</a>
+            </button>
+        </p>
     </div>
 </form>
 <p>
@@ -107,32 +114,35 @@
 </p>
 
 <form id="Tiempo">
-   <h2 class="tiempo">TIEMPO</h2>
+    <h2 class="tiempo">TIEMPO</h2>
     <div id="t">
-    <p>
-        <label for="velocidadInicial">V<sub>o</sub>:</label>
-        <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
-        <label for="velocidadInicial"> </label>
+        <p>
+            <label for="velocidadInicial">V<sub>o</sub>:</label>
+            <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
+            m/s
 
-    </p>
-    <p>
-        <label for="vf"> V<sub>f</sub>:</label>
-        <input type="text" name="velocidadfinal" id="vf">
-    </p>
-    <p>
-        <label for="yo"> Y<sub>0</sub>:</label>
-        <input type="text" name="alturainicial" id="yo">
-    </p>
-    <p>
-        <label for="gravedad"> g:</label>
-        <select name="gravedad" id="grav">
-            <option value="10"> 10m/s^2</option>
-            <option value="9.8"> 9.8m/s^2</option>
-        </select>
-    </p>
-    <button id="boton3">
-        <a id="C3" href="#Tiempo">Calcular</a>
-    </button>
+        </p>
+        <p>
+            <label for="vf"> V<sub>f</sub>:</label>
+            <input id="vf" type="number" max="100" min="0" name="velocidadFinal"/>
+            m/s
+
+        </p>
+        <p>
+            <label for="yo"> Y<sub>0</sub>:</label>
+            <input id="yo" type="number" max="500" min="0" name="altura"/>
+            m
+        </p>
+        <p>
+            <label for="gravedad"> g:</label>
+            <select name="gravedad" id="grav">
+                <option value="10"> 10m/s^2</option>
+                <option value="9.8"> 9.8m/s^2</option>
+            </select>
+        </p>
+        <button id="boton3">
+            <a id="C3" href="#Tiempo">Calcular</a>
+        </button>
     </div>
 </form>
 <footer id="contacto">
