@@ -24,9 +24,7 @@
     <h1> CAIDA LIBRE </h1>
 </header>
 
-<p>
 <h3> ¿Qué desea calcular? </h3>
-</p>
 <div id="opciones">
     <a href="#VelocidadFinal">Velocidad Final</a>
     <p>
@@ -42,12 +40,12 @@
     Velocidad Final
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
-        <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
-        <label for="velocidadInicial"> </label>
+        <input id="vI" type="number" max="100" min="0" name="velocidadInicial">
+        <label for="velocidadInicial"></label>
     </p>
     <p>
         <label for="tiempo">t: </label>
-        <input id="time" type="number" max="3600" min="0" name="tiempo"/>
+        <input id="time" type="number" max="3600" min="0" name="tiempo">
         <label for="tiempo"></label>
     </p>
     <p>
@@ -58,13 +56,8 @@
         </select>
     </p>
     <p>
-        <button>
-            Calcular
-        </button>
-    </p>
-    <p>
-        <button>
-            Calcular
+        <button id="boton1">
+            <a id="c1"Calcular></a>
         </button>
     </p>
 </form>
@@ -84,6 +77,7 @@
     </p>
     <p>
         <label for="yo"> Y<sub>0</sub>:</label>
+        <input id="altura" type="number" max="500" min="0" name="altura"/>
         <input type="text" name="alturainicial" id="y">
     </p>
     <p>
@@ -94,13 +88,8 @@
         </select>
     </p>
     <p>
-        <button>
-            Calcular
-        </button>
-    </p>
-    <p>
-        <button>
-            Calcular
+        <button id="boton2">
+            <a id="c2"Calcular></a>
         </button>
     </p>
 </form>
@@ -131,12 +120,10 @@
             <option value="9.8"> 9.8m/s^2</option>
         </select>
     </p>
-</form>
-<p>
-    <button>
-        Calcular
+    <button id="boton3">
+        <a id="c3"Calcular></a>
     </button>
-</p>
+</form>
 <footer id="contacto">
     <div class="piedepagina">
         <div class="mail">
