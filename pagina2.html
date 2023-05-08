@@ -25,19 +25,118 @@
 </header>
 
 <p>
-<h3> <strong> ¿Qué desea calcular? </strong></h3>
+<h3> ¿Qué desea calcular? </h3>
 </p>
-<p>
 <div id="opciones">
-    <a href="pagina3.html">Velocidad Final</a>
+    <a href="#VelocidadFinal">Velocidad Final</a>
+    <p>
+        <a href="#PosicionFinal">Posicion Final</a>
     </p>
     <p>
-        <a href="pagina4.html">Posicion Final</a>
-    </p>
-    <p>
-        <a href="pagina5.html">Tiempo</a>
+        <a href="#Tiempo">Tiempo</a>
     </p>
 </div>
+
+
+<form id="VelocidadFinal">
+    Velocidad Final
+    <p>
+        <label for="velocidadInicial">V<sub>o</sub>:</label>
+        <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
+        <label for="velocidadInicial"> </label>
+    </p>
+    <p>
+        <label for="tiempo">t: </label>
+        <input id="time" type="number" max="3600" min="0" name="tiempo"/>
+        <label for="tiempo"></label>
+    </p>
+    <p>
+        <label for="gravedad"> g:</label>
+        <select name="gravedad" id="g">
+            <option value="10"> 10m/s^2 </option>
+            <option value="9.8"> 9.8m/s^2 </option>
+        </select>
+    </p>
+    <p>
+        <button>
+            Calcular
+        </button>
+    </p>
+    <p>
+        <button>
+            Calcular
+        </button>
+    </p>
+</form>
+<p>
+</p>
+<form id="PosicionFinal">
+    Posicion Final
+    <p>
+        <label for="velocidadInicial">V<sub>o</sub>:</label>
+        <input id="vo" type="number" max="100" min="0" name="velocidadInicial"/>
+        <label for="velocidadInicial"> </label>
+    </p>
+    <p>
+        <label for="tiempo">t: </label>
+        <input id="t" type="number" max="3600" min="0" name="tiempo"/>
+        <label for="tiempo"></label>
+    </p>
+    <p>
+        <label for="yo"> Y<sub>0</sub>:</label>
+        <input type="text" name="alturainicial" id="y">
+    </p>
+    <p>
+        <label for="gravedad"> g:</label>
+        <select name="gravedad" id="gravedad">
+            <option value="10"> 10m/s^2</option>
+            <option value="9.8"> 9.8m/s^2</option>
+        </select>
+    </p>
+    <p>
+        <button>
+            Calcular
+        </button>
+    </p>
+    <p>
+        <button>
+            Calcular
+        </button>
+    </p>
+</form>
+<p>
+
+</p>
+
+<form id="Tiempo">
+    Tiempo
+    <p>
+        <label for="velocidadInicial">V<sub>o</sub>:</label>
+        <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
+        <label for="velocidadInicial"> </label>
+
+    </p>
+    <p>
+        <label for="vf"> V<sub>f</sub>:</label>
+        <input type="text" name="velocidadfinal" id="vf">
+    </p>
+    <p>
+        <label for="yo"> Y<sub>0</sub>:</label>
+        <input type="text" name="alturainicial" id="yo">
+    </p>
+    <p>
+        <label for="gravedad"> g:</label>
+        <select name="gravedad" id="grav">
+            <option value="10"> 10m/s^2</option>
+            <option value="9.8"> 9.8m/s^2</option>
+        </select>
+    </p>
+</form>
+<p>
+    <button>
+        Calcular
+    </button>
+</p>
 <footer id="contacto">
     <div class="piedepagina">
         <div class="mail">
