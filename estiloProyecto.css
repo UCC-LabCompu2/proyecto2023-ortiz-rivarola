@@ -112,7 +112,7 @@ ul{
     margin-bottom: 2em;
 }
 
-nav {
+#barradeopciones {
     font-family: 'Caveat', cursive;
     text-align: right;
     padding: 30px 50px;
@@ -174,16 +174,16 @@ button{
     width: 30%;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 10em;
+    margin-bottom: 15em;
 }
-#opciones {
+#ops {
     font-family: 'Nunito', sans-serif;;
     color: black;
     font-weight: 300;
     text-decoration: none;
     margin-left: 40px;
 }
-#opciones:visited{
+#ops:visited{
     color: black;
     font-weight: 300;
     text-decoration: none;
@@ -195,12 +195,15 @@ button{
     margin-bottom: 3em;
 }
 input, select {
-    width: 193px;
-    height: 37px;
+    width: 180px;
+    height: 35px;
     margin-top: 25px;
     border-radius: 10px;
     text-align: center;
 }
 label{
     font-weight: bold;
+}
+.posicionfinal, .tiempo, .velocidadfinal{
+    margin-top: 3em;
 }

@@ -21,7 +21,7 @@
 <body>
 
 <header>
-    <nav>
+    <nav id="barradeopciones">
         <a href="index.html">INICIO</a>
         <a href="pagina1.html">TEORIA</a>
     </nav>
@@ -30,18 +30,20 @@
 
 <h3 id="pregunta"> ¿Qué desea calcular? </h3>
 <div id="opciones">
+    <nav id="ops">
     <ul>
         <li><a href="#VelocidadFinal">Velocidad Final</a></li>
         <li><a href="#PosicionFinal">Posicion Final</a></li>
         <li><a href="#Tiempo">Tiempo</a></li>
     </ul>
+    </nav>
 </div>
 <div class="paracaidismo" id="caida">
 <img src="imagenes/gifparcaidismo.gif" alt="persona tirandose de un precipicio">
 </div>
 
 <form id="VelocidadFinal">
-    <h2>VELOCIDAD FINAL</h2>
+    <h2 class="velocidadfinal">VELOCIDAD FINAL</h2>
     <div id="vo">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
@@ -69,7 +71,7 @@
 </form>
 
 <form id="PosicionFinal">
-    <h2>POSICION FINAL</h2>
+    <h2 class="posicionfinal">POSICION FINAL</h2>
     <div id="po">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
@@ -105,7 +107,7 @@
 </p>
 
 <form id="Tiempo">
-   <h2>TIEMPO</h2>
+   <h2 class="tiempo">TIEMPO</h2>
     <div id="t">
     <p>
         <label for="velocidadInicial">V<sub>o</sub>:</label>
