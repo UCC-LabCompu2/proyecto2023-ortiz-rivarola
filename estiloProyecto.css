@@ -4,13 +4,10 @@ h1, h5{
     font-family: 'Kalam', cursive;
 }
 body{
-    margin-bottom: 0;
-    margin-right: 0;
-    margin-left: 0;
-    margin-top: 0;
+    margin: 0 0 0 0;
     text-align: justify-all;
     font-family: "Calibri Light";
-    background: lightskyblue;
+    background: lavender;
     line-height: 15px;
 }
 .portada{
@@ -39,68 +36,44 @@ body{
     line-height: 1.3;
     margin-left: 500px;
 }
-#t1{
+#t1, #t2, #t3{
     text-align: center;
     font-size: 20px;
     line-height: 15%;
     margin: 10px;
 }
-#t2{
+.f1, .f2, .f3{
+    margin-left: 5em;
+    width: 80%;
     text-align: center;
-    font-size: 20px;
-    line-height: 15%;
-}
-#t3{
-    text-align: center;
-    font-size: 20px;
-    line-height: 15%;
-    margin: 10px;
-}
-.f1{
-    text-align: center;
-    font-weight: bold;
-    background-color: bisque;
-    border-radius: 10px;
-    position: relative;
-    height: 5em;
-    width: 10em;
-    top: 75%;
-    right: 100%;
-    left: 43%;
-    bottom: 15%;
-}
-.f2{
-    text-align: justify-all;
-    font-weight: bold;
-    background-color:  sandybrown;
-    border-radius: 10px;
-    position: relative;
-    height: 5em;
-    width: 10em;
-    top: 80%;
-    right: 50%;
-    left: 43%;
-    bottom: 15%;
-}
-.f3{
-    text-align: center;
-    font-weight: bold;
-    background-color: darksalmon;
-    border-radius: 10px;
-    position: relative;
-    height: 5em;
-    width: 10em;
-    top: 90%;
-    right: 100%;
-    left: 43%;
-    bottom: 15%;
+    line-height: 3;
+    letter-spacing: 2px;
+    font-weight: bolder;
+    font-size: 25px;
+    padding-top: 6em;
 }
 .f1:hover, .f2:hover, .f3:hover{
-    font-size: 1.2em;
+    font-size: 26px;
     background-color: mediumpurple;
     -webkit-transition: background-color 0.5s linear;
     transition: background-color 0.5s linear;
 }
+.f1{
+    background-color: lightsalmon;
+    border-radius: 10px;
+    position: relative;
+}
+.f2{
+    background-color: pink;
+    border-radius: 10px;
+    position: relative;
+}
+.f3{
+    background-color: peachpuff;
+    border-radius: 10px;
+    position: relative;
+}
+
 #gif{
     float: left;
     width: 50%;
@@ -114,9 +87,9 @@ nav {
     font-family: 'Caveat', cursive;
     text-align: right;
     padding: 30px 50px;
-    background-color: whitesmoke;
+    background-color: ghostwhite;
     background-size: 50%;
-    width: 95%;
+    width: 92.5%;
     font-size: 1.2em;
 }
 
@@ -147,11 +120,12 @@ footer{
     font-family: Calibri;
     margin-left: 10px;
 }
-#start{
+#start, #C1, #C2, #C3{
     font-family: "Calibri Light";
     color: white;
     text-align:center;
-    font-size: 1.5em;
+    font-size: 25px;
+    font-weight: bolder;
 
 }
 button{
@@ -159,10 +133,19 @@ button{
     background-color: black;
     border-radius: 5px;
     position: absolute;
+}
+#botonPRINCIPAL{
     top: 75%;
     right: 100%;
     left: 43%;
-    bottom: 15%;
+    bottom: 10%;
+}
+
+#boton1{
+    top: 75%;
+    right: 100%;
+    left: 5%;
+    bottom: 10%;
 }
 #opciones {
     font-family: 'Nunito', sans-serif;;
