@@ -13,10 +13,17 @@ h2{
     font-family: 'Amatic SC', cursive;
 }
 h3{
+    margin-top: 3em;
     margin-left: 40px;
+}
+#pregunta{
+    font-size: 30px;
 }
 #ardilla{
     margin-left: 40px;
+}
+form{
+    margin-left: 20px;
 }
 body{
     margin: 0 0 0 0;
@@ -52,10 +59,11 @@ body{
     margin-left: 500px;
 }
 #t1, #t2, #t3{
+    margin-top: 1.2em;
     text-align: center;
     font-size: 20px;
     line-height: 15%;
-    margin: 10px;
+
 }
 .f1, .f2, .f3{
     margin-top: 120px;
