@@ -29,11 +29,6 @@ h3{
 form{
     margin-top: 20px;
 }
-#po, #vo, #t{
-    margin-left: 40em;
-    margin-top: 2em;
-    margin-bottom: 3em;
-}
 body{
     margin: 0 0 0 0;
     text-align: justify-all;
@@ -164,23 +159,22 @@ footer{
 
 }
 button{
-    width: 15%;
     background-color: black;
     border-radius: 5px;
-    position: absolute;
 }
 #botonPRINCIPAL{
+    width: 15%;
     top: 75%;
     right: 100%;
     left: 43%;
     bottom: 10%;
+    position: absolute;
 }
-
-#boton1{
-    top: 75%;
-    right: 100%;
-    left: 5%;
-    bottom: 10%;
+#boton1, #boton2, #boton3{
+    width: 30%;
+    position: relative;
+    margin-top: 20px;
+    margin-bottom: 10em;
 }
 #opciones {
     font-family: 'Nunito', sans-serif;;
@@ -194,4 +188,19 @@ button{
     font-weight: 300;
     text-decoration: none;
     margin-left: 40px;
+}
+#po, #vo, #t{
+    margin-left: 35em;
+    margin-top: 2em;
+    margin-bottom: 3em;
+}
+input, select {
+    width: 193px;
+    height: 37px;
+    margin-top: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+label{
+    font-weight: bold;
 }
