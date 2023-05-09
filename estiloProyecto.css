@@ -206,7 +206,8 @@ button {
     margin-top: 20px;
     margin-bottom: 15em;
 }
-#boton1:hover, #boton2:hover, #boton3:hover{
+
+#boton1:hover, #boton2:hover, #boton3:hover {
     background-color: darkseagreen;
     -webkit-transition: background-color 0.5s linear;
     transition: background-color 0.5s linear;
@@ -248,9 +249,11 @@ label {
 .posicionfinal, .tiempo, .velocidadfinal {
     margin-top: 3em;
 }
-canvas{
-    width:200px;
-    height:100px;
-    border:1px ;
-    solid-color: darkseagreen;"
+
+canvas {
+    width: 200px;
+    height: 100px;
+    border: 1px;
+    solid-color: darkseagreen;
+"
 }
