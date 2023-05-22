@@ -258,7 +258,9 @@ canvas {
 }
 
 .BOTON1, .BOTON2, .BOTON3{
-    background: #feab5a;
+    font-size: math;
+    font-weight: bold;
+    background: ghostwhite;
     max-width: 500px;
     display: none;
 }

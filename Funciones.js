@@ -9,7 +9,7 @@ let Velocidad = ()=>{
     let re, v, t, g;
     v = Number(document.VelocidadFinal.velocidadInicial.value);
     t = Number(document.VelocidadFinal.tiempo.value);
-    g = document.getElementById("g");
+    g = 9.8;
     if (isNaN(v)) {
         alert("El valor ingresado es incorrecto");
         v = "";
@@ -18,13 +18,8 @@ let Velocidad = ()=>{
         alert("El valor ingresado es incorrecto");
         t = "";
     }
-    if (g === "diezms"){
-        g=10;
-    } else if (g === "nuevems"){
-        g=9.8;
-    }
     re = v + (g*t);
-    document.VelocidadFinal.velocidad_total.value = re;
+    document.VelocidadFinal.velocidad_total.value = re + "m/s";
 }
 
 /**
@@ -35,12 +30,11 @@ let Velocidad = ()=>{
 
 
 let Posicion = ()=>{
-    let re, v, g, a;
-    let t = document.getElementById("tiempo").value;
-    t = Math.pow(t,2);
+    let re, v, g, a, t;
+    t = Number (document.PosicionFinal.tiempo.value);
     v = Number(document.PosicionFinal.velocidadInicial.value);
     a = Number(document.PosicionFinal.altura.value);
-    g = document.getElementById("gravedad");
+    g = 9.8;
     if (isNaN(v)) {
         alert("El valor ingresado es incorrecto");
         v = "";
@@ -53,13 +47,8 @@ let Posicion = ()=>{
         alert("El valor ingresado es incorrecto");
         a = "";
     }
-    if (g === "diez"){
-        g=10;
-    } else if (g === "nueve"){
-        g=9.8;
-    }
-    re = a + (v*t)+(0.5*g*(t));
-    document.PosicionFinal.posicion_total.value = re;
+    re = a + (v*t)+(0.5*g*(Math.pow(t, 2)));
+    document.PosicionFinal.posicion_total.value = re + "m";
 }
 
 /**
@@ -73,7 +62,7 @@ let Tiempo = ()=>{
     let re, vi, g, vf;
     vf = Number(document.TiempoFinal.velocidadFinal.value);
     vi = Number(document.TiempoFinal.velocidadInicial.value);
-    g = document.getElementById("grav");
+    g = 9.8;
     if (isNaN(vi)) {
         alert("El valor ingresado es incorrecto");
         vi = "";
@@ -82,13 +71,11 @@ let Tiempo = ()=>{
         alert("El valor ingresado es incorrecto");
         vf = "";
     }
-    if (g === "diezm"){
-        g=10;
-    } else if (g === "nuevem"){
-        g=9.8;
+    re = (vf - vi)/g;
+    if (re < 0){
+        re = re*(-1);
     }
-    re = (vf -vi)/g;
-    document.TiempoFinal.tiempo_total.value = re;
+    document.TiempoFinal.tiempo_total.value = re + "s";
 }
 
 /**
