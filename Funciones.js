@@ -9,7 +9,7 @@ let Velocidad = ()=>{
     let re, v, t, g;
     v = Number(document.VelocidadFinal.velocidadInicial.value);
     t = Number(document.VelocidadFinal.tiempo.value);
-    g = 9.8;
+    g = document.getElementById("g");
     if (isNaN(v)) {
         alert("El valor ingresado es incorrecto");
         v = "";
@@ -17,6 +17,11 @@ let Velocidad = ()=>{
     if (isNaN(t)) {
         alert("El valor ingresado es incorrecto");
         t = "";
+    }
+    if (g === "diezms"){
+        g=10;
+    } else if (g === "nuevems"){
+        g=9.8;
     }
     re = v + (g*t);
     document.VelocidadFinal.velocidad_total.value = re;
@@ -30,11 +35,12 @@ let Velocidad = ()=>{
 
 
 let Posicion = ()=>{
-    let re, v, t, g, a;
+    let re, v, g, a;
+    let t = document.getElementById("tiempo").value;
+    t = Math.pow(t,2);
     v = Number(document.PosicionFinal.velocidadInicial.value);
-    t = Number(document.PosicionFinal.tiempo.value);
     a = Number(document.PosicionFinal.altura.value);
-    g = 9.8;
+    g = document.getElementById("gravedad");
     if (isNaN(v)) {
         alert("El valor ingresado es incorrecto");
         v = "";
@@ -47,7 +53,12 @@ let Posicion = ()=>{
         alert("El valor ingresado es incorrecto");
         a = "";
     }
-    re = a + (v*t)+(0.5*g*(t^2));
+    if (g === "diez"){
+        g=10;
+    } else if (g === "nueve"){
+        g=9.8;
+    }
+    re = a + (v*t)+(0.5*g*(t));
     document.PosicionFinal.posicion_total.value = re;
 }
 
@@ -62,7 +73,7 @@ let Tiempo = ()=>{
     let re, vi, g, vf;
     vf = Number(document.TiempoFinal.velocidadFinal.value);
     vi = Number(document.TiempoFinal.velocidadInicial.value);
-    g = 9.8;
+    g = document.getElementById("grav");
     if (isNaN(vi)) {
         alert("El valor ingresado es incorrecto");
         vi = "";
@@ -70,6 +81,11 @@ let Tiempo = ()=>{
     if (isNaN(vf)) {
         alert("El valor ingresado es incorrecto");
         vf = "";
+    }
+    if (g === "diezm"){
+        g=10;
+    } else if (g === "nuevem"){
+        g=9.8;
     }
     re = (vf -vi)/g;
     document.TiempoFinal.tiempo_total.value = re;
