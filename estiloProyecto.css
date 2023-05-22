@@ -256,3 +256,9 @@ canvas {
     solid-color: darkseagreen;
 "
 }
+
+.BOTON1, .BOTON2, .BOTON3{
+    background: #feab5a;
+    max-width: 500px;
+    display: none;
+}

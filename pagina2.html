@@ -19,6 +19,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
           rel="stylesheet">
+    <script type="text/javascript" src="Funciones.js"></script>
 
 </head>
 <body>
@@ -44,18 +45,18 @@
     <img src="imagenes/gifparcaidismo.gif" alt="persona tirandose de un precipicio">
 </div>
 
-<form id="VelocidadFinal">
+<form id="VelocidadFinal" class="VelocidadFinal" name="VelocidadFinal">
     <h2 class="velocidadfinal">VELOCIDAD FINAL</h2>
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" max="100" min="0" name="velocidadInicial"/>
+            <input id="vI" type="number" max="100" min="0" name="velocidadInicial" onchange="Velocidad()"/>
             <label for="vI"></label>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" max="3600" min="0" name="tiempo">
+            <input id="time" type="number" max="3600" min="0" name="tiempo" onchange="Velocidad()">
             <label for="time"></label>
             s
         </p>
@@ -67,31 +68,32 @@
             </select>
         </p>
         <p>
-            <button id="boton1">
-                <a id="C1" href="#VelocidadFinal">Calcular</a>
+            <button id="boton1" name="boton1" onclick="mostrar_Resultado(this.id)">
+                <a id="C1" href="#VelocidadFinal">Calcular </a>
             </button>
         </p>
+        <input id="totalV" type="text" name="velocidad_total" class="BOTON1" disabled>
     </div>
 </form>
 
-<form id="PosicionFinal">
+<form id="PosicionFinal" class="PosicionFinal" name="PosicionFinal">
     <h2 class="posicionfinal">POSICIÓN FINAL</h2>
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" max="100" min="0" name="velocidadInicial"/>
+            <input id="v0" type="number" max="100" min="0" name="velocidadInicial" onchange="Posicion()"/>
             <label for="v0"> </label>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" max="3600" min="0" name="tiempo"/>
+            <input id="ti" type="number" max="3600" min="0" name="tiempo" onchange="Posicion()"/>
             <label for="ti"></label>
             s
         </p>
         <p>
             <label for="altura"> Y<sub>0</sub>:</label>
-            <input id="altura" type="number" max="500" min="0" name="altura"/>
+            <input id="altura" type="number" max="500" min="0" name="altura" onchange="Posicion()"/>
             <label for="altura"></label>
             m
         </p>
@@ -103,35 +105,31 @@
             </select>
         </p>
         <p>
-            <button id="boton2">
+            <button id="boton2" name="boton2" onclick="mostrar_Resultado(this.id)">
                 <a id="C2" href="#PosicionFinal">Calcular</a>
             </button>
         </p>
+        <input id="totalP" type="text" name="posicion_total" class="BOTON2" disabled>
     </div>
 </form>
 <p>
 
 </p>
 
-<form id="Tiempo">
+<form id="Tiempo" class="TiempoFinal" name="TiempoFinal">
     <h2 class="tiempo">TIEMPO</h2>
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial"/>
+            <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial" onchange="Tiempo()"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" max="100" min="0" name="velocidadFinal"/>
+            <input id="vf" type="number" max="100" min="0" name="velocidadFinal" onchange="Tiempo()"/>
             m/s
 
-        </p>
-        <p>
-            <label for="yo"> Y<sub>0</sub>:</label>
-            <input id="yo" type="number" max="500" min="0" name="altura"/>
-            m
         </p>
         <p>
             <label for="gravedad"> g:</label>
@@ -140,9 +138,10 @@
                 <option value="9.8"> 9.8m/s^2</option>
             </select>
         </p>
-        <button id="boton3">
+        <button id="boton3" onclick="mostrar_Resultado(this.id)">
             <a id="C3" href="#Tiempo">Calcular</a>
         </button>
+        <input id="totalT" type="text" name="tiempo_total" class="BOTON3" disabled>
     </div>
 </form>
 <canvas id="Canvas">
