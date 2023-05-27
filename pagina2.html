@@ -22,7 +22,8 @@
     <script type="text/javascript" src="Funciones.js"></script>
 
 </head>
-<body>
+
+<body onload="setInterval(animarBart,30)">
 
 <header>
     <nav id="barradeopciones">
@@ -30,6 +31,7 @@
         <a href="pagina1.html">TEORÍA</a>
     </nav>
 </header>
+
 <h1> CAÍDA LIBRE </h1>
 <h3 id="pregunta"> ¿Qué desea calcular? </h3>
 <div id="opciones">
@@ -143,9 +145,12 @@
         <input id="totalT" type="text" name="tiempo_total" class="BOTON3" disabled>
     </div>
 </form>
-<canvas id="Canvas">
+
+<canvas id="myCanvas" class="ejer" width="1000px" height="490px">
     Your browser does not support the HTML5 canvas tag.
 </canvas>
+
+
 <footer id="contacto">
     <div class="piedepagina">
         <div class="mail">
