@@ -254,6 +254,10 @@ canvas {
     height: 100px;
     border: 1px;
     solid-color: darkseagreen;
+<<<<<<< HEAD
+=======
+
+>>>>>>> debcb76a02dd1851f6ba707abef4b6576aca3e97
 }
 
 .BOTON1, .BOTON2, .BOTON3{
@@ -262,4 +266,13 @@ canvas {
     background: ghostwhite;
     max-width: 500px;
     display: none;
+}
+
+
+.ejer{
+    border:1px solid #000000;
+    background-color: blueviolet;
+    margin-left: 29em;
+    width: 500px;
+    height: 500px;
 }

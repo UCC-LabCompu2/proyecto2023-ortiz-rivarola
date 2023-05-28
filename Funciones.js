@@ -101,3 +101,27 @@ let mostrar_Resultado = (id) => {
         document.getElementsByName("tiempo_total")[0].style.display = 'none';
     }
 }
+
+x=0;
+dx=2;
+function animarBart (){
+
+var canvas = document.getElementById("myCanvas");
+var ctx = canvas.getContext("2d");
+
+canvas.width = canvas.width;
+
+var img = new Image();
+img.src = "imagenes/bart.png";
+
+img.onload = function () {
+
+    ctx.drawImage(img,x,posy);
+}
+
+if (x>canvas.width){
+    x=0;
+}
+x+=dx;
+
+}
