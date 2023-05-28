@@ -9,7 +9,7 @@ let Velocidad = ()=>{
     let re, v, t, g;
     v = Number(document.VelocidadFinal.velocidadInicial.value);
     t = Number(document.VelocidadFinal.tiempo.value);
-    g = 9.8;
+    g = document.getElementById("gravedad_V").value;
     if (isNaN(v)) {
         alert("El valor ingresado es incorrecto");
         v = "";
@@ -19,7 +19,7 @@ let Velocidad = ()=>{
         t = "";
     }
     re = v + (g*t);
-    document.VelocidadFinal.velocidad_total.value = re + "m/s";
+    document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
 }
 
 /**
@@ -48,7 +48,7 @@ let Posicion = ()=>{
         a = "";
     }
     re = a + (v*t)+(0.5*g*(Math.pow(t, 2)));
-    document.PosicionFinal.posicion_total.value = re + "m";
+    document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
 }
 
 /**
@@ -75,7 +75,7 @@ let Tiempo = ()=>{
     if (re < 0){
         re = re*(-1);
     }
-    document.TiempoFinal.tiempo_total.value = re + "s";
+    document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + "s";
 }
 
 /**
