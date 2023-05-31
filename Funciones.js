@@ -74,7 +74,6 @@ let Posicion = () => {
  * @method Tiempo
  * @param {string} id - Id del elemento input radio en html
  */
-
 let Tiempo = () => {
     let re, vi, g, vf;
     let vMax = 100;
