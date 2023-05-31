@@ -102,26 +102,32 @@ let mostrar_Resultado = (id) => {
     }
 }
 
-x=0;
-dx=2;
+/**
+ * Función canva: animar imágen.
+ * @method Canva
+ * @param {string} Id - Id del elemento canva.
+ */
+var y=0;
+var dy=2;
 function animarBart (){
 
-var canvas = document.getElementById("myCanvas");
-var ctx = canvas.getContext("2d");
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
 
-canvas.width = canvas.width;
+    var img = new Image();
+    img.src = "imagenes/bart.png";
 
-var img = new Image();
-img.src = "imagenes/bart.png";
+    img.onload = function () {
 
-img.onload = function () {
+        canvas.width=canvas.width;
+        ctx.drawImage(img,100,y);
+    }
 
-    ctx.drawImage(img,x,posy);
+    y+=dy;
+
+    console.log ("La coordenada de y es: "+y);
+    if (y>canvas.width){
+        y=0;
+    }
 }
 
-if (x>canvas.width){
-    x=0;
-}
-x+=dx;
-
-}

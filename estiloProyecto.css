@@ -266,10 +266,13 @@ canvas {
 }
 
 
-.ejer{
-    border:1px solid #000000;
-    background-color: blueviolet;
+.canvasBart {
+    border: 1px solid #000000;
+    background-color: white;
     margin-left: 29em;
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
+
+
 }
+
