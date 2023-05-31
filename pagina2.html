@@ -52,13 +52,13 @@
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" max="100" min="0" name="velocidadInicial" onchange="Velocidad()"/>
+            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()"/>
             <label for="vI"></label>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" max="3600" min="0" name="tiempo" onchange="Velocidad()">
+            <input id="time" type="number" name="tiempo" onchange="Velocidad()">
             <label for="time"></label>
             s
         </p>
@@ -83,19 +83,19 @@
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" max="100" min="0" name="velocidadInicial" onchange="Posicion()"/>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()"/>
             <label for="v0"> </label>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" max="3600" min="0" name="tiempo" onchange="Posicion()"/>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion()"/>
             <label for="ti"></label>
             s
         </p>
         <p>
             <label for="altura"> Y<sub>0</sub>:</label>
-            <input id="altura" type="number" max="500" min="0" name="altura" onchange="Posicion()"/>
+            <input id="altura" type="number" name="altura" onchange="Posicion()"/>
             <label for="altura"></label>
             m
         </p>
@@ -122,13 +122,13 @@
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" max="100" min="0" name="velocidadInicial" onchange="Tiempo()"/>
+            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" max="100" min="0" name="velocidadFinal" onchange="Tiempo()"/>
+            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()"/>
             m/s
 
         </p>
@@ -150,6 +150,15 @@
 <canvas id="myCanvas" class="canvasBart" width="1000px" height="500px">
     Your browser does not support the HTML5 canvas tag.
 </canvas>
+
+<dialog id="myDialog" class="Dialog">
+    <h6>Error al ingresar datos!</h6>
+    <div id="advertencia">
+        <img src="imagenes/advertencia.png" alt="advertencia" class="adv">
+    </div>
+    <p> Las coordenadas ingresadas no son validas</p>
+    <button id="botonDialog" type="button" onclick="cerrarDialog()"> Cerrar</button>
+</dialog>
 
 
 <footer id="contacto">

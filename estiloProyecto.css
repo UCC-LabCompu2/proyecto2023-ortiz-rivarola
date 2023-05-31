@@ -246,7 +246,7 @@ label {
 }
 
 .posicionfinal, .tiempo, .velocidadfinal {
-    margin-top: 3em;
+    margin-top: 1em;
 }
 
 canvas {
@@ -254,13 +254,10 @@ canvas {
     height: 100px;
     border: 1px;
     solid-color: darkseagreen;
-<<<<<<< HEAD
-=======
-
->>>>>>> debcb76a02dd1851f6ba707abef4b6576aca3e97
+< < < < < < < HEAD = = = = = = = >>> >>> > debcb76a02dd1851f6ba707abef4b6576aca3e97
 }
 
-.BOTON1, .BOTON2, .BOTON3{
+.BOTON1, .BOTON2, .BOTON3 {
     font-size: math;
     font-weight: bold;
     background: ghostwhite;
@@ -275,7 +272,33 @@ canvas {
     margin-left: 29em;
     width: 400px;
     height: 400px;
+    margin-bottom: 2em;
+}
 
+.Dialog {
+    width: 400px;
+    height: 200px;
+    border-radius: 10px;
+    text-align: center;
+    background-color: oldlace;
+}
 
+#botonDialog {
+    font-size: 15px;
+}
+
+.adv {
+    margin-top: 1em;
+    width: 50px;
+    height: 50px;
+}
+
+h6 {
+    text-align: center;
+    font-weight: bold;
+    font-family: 'Amatic SC', cursive;
+    font-size: 50px;
+    margin-bottom: 0;
+    margin-top: 15px;
 }
 

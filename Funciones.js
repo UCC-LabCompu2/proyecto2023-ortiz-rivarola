@@ -5,8 +5,12 @@
  */
 
 
-let Velocidad = ()=>{
+let Velocidad = () => {
     let re, v, t, g;
+    let vMin = 0;
+    let vMax = 100;
+    let tMax = 3600;
+    let tMin = 0;
     v = Number(document.VelocidadFinal.velocidadInicial.value);
     t = Number(document.VelocidadFinal.tiempo.value);
     g = document.getElementById("gravedad_V").value;
@@ -18,8 +22,12 @@ let Velocidad = ()=>{
         alert("El valor ingresado es incorrecto");
         t = "";
     }
-    re = v + (g*t);
-    document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
+    if (t < tMin || t > tMax || v < vMin || v > vMax) {
+        openDialog();
+    } else {
+        re = v + (g * t);
+        document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
+    }
 }
 
 /**
@@ -29,9 +37,15 @@ let Velocidad = ()=>{
  */
 
 
-let Posicion = ()=>{
+let Posicion = () => {
     let re, v, g, a, t;
-    t = Number (document.PosicionFinal.tiempo.value);
+    let vMin = 0;
+    let vMax = 100;
+    let tMax = 3600;
+    let tMin = 0;
+    let aMax = 100;
+    let aMin = 0.1;
+    t = Number(document.PosicionFinal.tiempo.value);
     v = Number(document.PosicionFinal.velocidadInicial.value);
     a = Number(document.PosicionFinal.altura.value);
     g = 9.8;
@@ -47,8 +61,12 @@ let Posicion = ()=>{
         alert("El valor ingresado es incorrecto");
         a = "";
     }
-    re = a + (v*t)+(0.5*g*(Math.pow(t, 2)));
-    document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
+    if (t < tMin || t > tMax || v < vMin || v > vMax || a < aMin || a > aMax) {
+        openDialog();
+    } else {
+        re = a + (v * t) + (0.5 * g * (Math.pow(t, 2)));
+        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
+    }
 }
 
 /**
@@ -58,8 +76,10 @@ let Posicion = ()=>{
  */
 
 
-let Tiempo = ()=>{
+let Tiempo = () => {
     let re, vi, g, vf;
+    let vMax = 100;
+    let vMin = 0;
     vf = Number(document.TiempoFinal.velocidadFinal.value);
     vi = Number(document.TiempoFinal.velocidadInicial.value);
     g = 9.8;
@@ -71,9 +91,17 @@ let Tiempo = ()=>{
         alert("El valor ingresado es incorrecto");
         vf = "";
     }
-    re = (vf - vi)/g;
-    if (re < 0){
-        re = re*(-1);
+    re = (vf - vi) / g;
+    if (re < 0) {
+        re = re * (-1);
+    }
+    if (vi < vMin || vi > vMax || vf < vMin || vf > vMax) {
+        openDialog();
+    } else {
+        re = (vf - vi) / g;
+        if (re < 0) {
+            re = re * (-1);
+        }
     }
     document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + "s";
 }
@@ -107,9 +135,10 @@ let mostrar_Resultado = (id) => {
  * @method Canva
  * @param {string} Id - Id del elemento canva.
  */
-var y=0;
-var dy=2;
-function animarBart (){
+var y = 0;
+var dy = 2;
+
+function animarBart() {
 
     var canvas = document.getElementById("myCanvas");
     var ctx = canvas.getContext("2d");
@@ -118,16 +147,24 @@ function animarBart (){
     img.src = "imagenes/bart.png";
 
     img.onload = function () {
-
-        canvas.width=canvas.width;
-        ctx.drawImage(img,100,y);
+        canvas.width = canvas.width;
+        ctx.drawImage(img, 100, y);
     }
 
-    y+=dy;
+    y += dy;
 
-    console.log ("La coordenada de y es: "+y);
-    if (y>canvas.width){
-        y=0;
+    console.log("La coordenada de y es: " + y);
+    if (y > canvas.width) {
+        y = 0;
     }
+}
+
+let openDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.showModal();
+}
+let cerrarDialog = () => {
+    const dialog = document.getElementById("myDialog");
+    dialog.close();
 }
 
