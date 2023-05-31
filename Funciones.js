@@ -75,7 +75,6 @@ let Posicion = () => {
  * @param {string} id - Id del elemento input radio en html
  */
 
-
 let Tiempo = () => {
     let re, vi, g, vf;
     let vMax = 100;
@@ -135,16 +134,19 @@ let mostrar_Resultado = (id) => {
  * @method Canva
  * @param {string} Id - Id del elemento canva.
  */
-var y = 0;
-var dy = 2;
+
+let y = 0;
+let dy = 2;
 
 function animarBart() {
 
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
 
-    var img = new Image();
+    let img = new Image();
     img.src = "imagenes/bart.png";
+    img.style.width = '20px';
+    img.style.height = '20px';
 
     img.onload = function () {
         canvas.width = canvas.width;
@@ -159,12 +161,25 @@ function animarBart() {
     }
 }
 
+/**
+ * Mensajes de error
+ * @method openDialog
+ * @param {string} Id - Id del elemento canva.
+ */
+
 let openDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.showModal();
 }
+
+/**
+ * Cierra mensajes de error
+ * @method cerrarDialog
+ * @param {string} Id - Id del elemento canva.
+ */
+
+
 let cerrarDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();
 }
-
