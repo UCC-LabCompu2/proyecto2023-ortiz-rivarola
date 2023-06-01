@@ -139,17 +139,16 @@ let dy = 2;
 
 function animarBart() {
 
+
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
 
     let img = new Image();
     img.src = "imagenes/bart.png";
-    img.style.width = '20px';
-    img.style.height = '20px';
 
     img.onload = function () {
         canvas.width = canvas.width;
-        ctx.drawImage(img, 100, y);
+        ctx.drawImage(img, 0, y, 320, 250);
     }
 
     y += dy;
