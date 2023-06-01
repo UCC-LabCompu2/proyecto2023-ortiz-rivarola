@@ -15,7 +15,7 @@ let Velocidad = (v, t) => {
     if (t < tMin || t > tMax || v < vMin || v > vMax) {
         abrirDialog();
     } else {
-        console.log(v, t);
+        console.log(v,t)
         re = v + (g * t);
         document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
     }
@@ -27,25 +27,23 @@ let Velocidad = (v, t) => {
  */
 
 
-let Posicion = (v, t, a) => {
+let Posicion = (v, t) => {
     let re, g;
-    const vMin = 0;
-    const vMax = 100;
-    const tMax = 3600;
-    const tMin = 0;
-    const aMax = 100;
-    const aMin = 1;
     g = 9.8;
-    if (t < tMin || t > tMax || v < vMin || v > vMax) {
-        abrirDialog();
+    const vMin = 0;
+    const vMax = 101;
+    const tMax = 3601;
+    const tMin = 0;
+
+    if (v < vMin || v >= vMax) {
+    abrirDialog();
     }
-    if (a < aMin || a > aMax){
-        abrirDialog();
-    } else {
-        console.log(v, t, a);
-        re = a + (v * t) + (0.5 * g * (Math.pow(t, 2)));
-        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
+    if (t < tMin || t >= tMax) {
+    abrirDialog();
     }
+    console.log(v,t);
+    re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
+    document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
 }
 
 /**
@@ -145,8 +143,6 @@ let abrirDialog = () => {
  * @method cerrarDialog
  *
  */
-
-
 let cerrarDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();

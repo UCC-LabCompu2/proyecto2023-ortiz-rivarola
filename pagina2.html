@@ -78,18 +78,13 @@
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion(velocidadInicial.value, tiempo.value)"/>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" name="tiempo" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion(velocidadInicial.value, tiempo.value)"/>
             s
-        </p>
-        <p>
-            <label for="altura"> Y<sub>0</sub>:</label>
-            <input id="altura" type="number" name="altura" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
-            m
         </p>
         <p>
             El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
