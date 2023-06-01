@@ -8,7 +8,8 @@ h1, h5 {
 }
 
 h2 {
-    text-align: center;
+    text-align: left;
+    margin-left: 20px;
     font-size: 50px;
     font-weight: bold;
     font-family: 'Amatic SC', cursive;
@@ -178,7 +179,6 @@ footer {
     text-align: center;
     font-size: 25px;
     font-weight: bolder;
-
 }
 
 button {
@@ -198,11 +198,10 @@ button {
 #boton1, #boton2, #boton3 {
     background-color: plum;
     height: 50px;
-    margin: 40px 5px 5px 5px;
     width: 30%;
     position: relative;
     margin-top: 20px;
-    margin-bottom: 15em;
+    margin-bottom: 3em;
 }
 
 #boton1:hover, #boton2:hover, #boton3:hover {
@@ -227,9 +226,9 @@ button {
 }
 
 #po, #vo, #t {
-    margin-left: 35em;
+    margin-left: 3em;
     margin-top: 2em;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
 }
 
 input, select {
@@ -245,15 +244,7 @@ label {
 }
 
 .posicionfinal, .tiempo, .velocidadfinal {
-    margin-top: 1em;
-}
-
-canvas {
-    width: 200px;
-    height: 100px;
-    border: 1px;
-    solid-color: darkseagreen;
-< < < < < < < HEAD = = = = = = = >>> >>> > debcb76a02dd1851f6ba707abef4b6576aca3e97
+    margin-top: 3em;
 }
 
 .BOTON1, .BOTON2, .BOTON3 {
@@ -264,14 +255,20 @@ canvas {
     display: none;
 }
 
-
-.canvasBart {
-    border: 1px solid #000000;
+#myCanvas {
+    float: right;
     background-color: plum;
-    margin-left: 29em;
-    width: 400px;
-    height: 400px;
-    margin-bottom: 2em;
+    margin-left: 45em;
+    width: 500px;
+    height: 350px;
+    margin-top: 0;
+}
+
+#animacion{
+    display: flex;
+    flex-direction: row;
+    justify-items: auto;
+    align-items: center;
 }
 
 .Dialog {

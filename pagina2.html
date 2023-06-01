@@ -23,7 +23,7 @@
 
 </head>
 
-<body onload="setInterval(animarBart,50)">
+<body onload=setInterval(animarBart,50)>
 
 <header>
     <nav id="barradeopciones">
@@ -52,28 +52,23 @@
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()"/>
-            <label for="vI"></label>
+            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad(velocidadInicial.value, tiempo.value)"/>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" name="tiempo" onchange="Velocidad()">
-            <label for="time"></label>
+            <input id="time" type="number" name="tiempo" onchange="Velocidad(velocidadInicial.value, tiempo.value)">
             s
         </p>
         <p>
-            <label for="gravedad_V"> g:</label>
-            <select name="gravedad" id="gravedad_V">
-                <option value="10" id="diez"> 10m/s^2</option>
-                <option value="9.8" id="nueve"> 9.8m/s^2</option>
-            </select>
+             El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
         </p>
         <p>
             <button id="boton1" name="boton1" onclick="mostrar_Resultado(this.id)">
                 <a id="C1" href="#VelocidadFinal">Calcular </a>
             </button>
         </p>
+        <label for="totalV"></label>
         <input id="totalV" type="text" name="velocidad_total" class="BOTON1" disabled>
     </div>
 </form>
@@ -83,34 +78,28 @@
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()"/>
-            <label for="v0"> </label>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" name="tiempo" onchange="Posicion()"/>
-            <label for="ti"></label>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
             s
         </p>
         <p>
             <label for="altura"> Y<sub>0</sub>:</label>
-            <input id="altura" type="number" name="altura" onchange="Posicion()"/>
-            <label for="altura"></label>
+            <input id="altura" type="number" name="altura" onchange="Posicion(velocidadInicial.value, tiempo.value, altura.value)"/>
             m
         </p>
         <p>
-            <label for="gravedad_P"> g:</label>
-            <select name="gravedad" id="gravedad_P">
-                <option value="10" id="diezm"> 10m/s^2</option>
-                <option value="9.8" id="nuevem"> 9.8m/s^2</option>
-            </select>
+            El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
         </p>
         <p>
             <button id="boton2" name="boton2" onclick="mostrar_Resultado(this.id)">
                 <a id="C2" href="#PosicionFinal">Calcular</a>
             </button>
         </p>
+        <label for="totalP"></label>
         <input id="totalP" type="text" name="posicion_total" class="BOTON2" disabled>
     </div>
 </form>
@@ -122,34 +111,32 @@
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()"/>
+            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo(velocidadInicial.value, velocidadFinal.value)"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()"/>
+            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo(velocidadInicial.value, velocidadFinal.value)"/>
             m/s
 
         </p>
         <p>
-            <label for="gravedad_T"> g:</label>
-            <select name="gravedad" id="gravedad_T">
-                <option value="10" id="diezms"> 10m/s^2</option>
-                <option value="9.8" id="nuevems"> 9.8m/s^2</option>
-            </select>
+            El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
         </p>
         <button id="boton3" onclick="mostrar_Resultado(this.id)">
             <a id="C3" href="#Tiempo">Calcular</a>
         </button>
+        <label for="totalT"></label>
         <input id="totalT" type="text" name="tiempo_total" class="BOTON3" disabled>
     </div>
 </form>
 
-
+<div id="animacion">
 <canvas id="myCanvas" class="canvasBart" width="1000px" height="500px">
     Your browser does not support the HTML5 canvas tag.
 </canvas>
+</div>
 
 <dialog id="myDialog" class="Dialog">
     <h6>Error al ingresar datos!</h6>
