@@ -117,8 +117,9 @@ function animarBart() {
 
     img.onload = function () {
         canvas.width = canvas.width;
-        ctx.drawImage(img, 0, y, 320, 250);
+        ctx.drawImage(img, 300, y, 320, 250);
     }
+
 
     y += dy;
 
@@ -126,6 +127,8 @@ function animarBart() {
     if (y > canvas.width) {
         y = 0;
     }
+
+
 }
 
 /**

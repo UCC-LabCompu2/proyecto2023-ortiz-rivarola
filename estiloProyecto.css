@@ -258,10 +258,12 @@ label {
 #myCanvas {
     float: right;
     background-color: plum;
-    margin-left: 45em;
+    margin-left: 50em;
     width: 500px;
-    height: 350px;
+    height: 600px;
     margin-top: 0;
+
+
 }
 
 #animacion{
@@ -269,6 +271,13 @@ label {
     flex-direction: row;
     justify-items: auto;
     align-items: center;
+    position: absolute;
+}
+
+.edificio{
+    margin-left: 30em;
+    padding-bottom: 10px;
+    position: absolute;
 }
 
 .Dialog {

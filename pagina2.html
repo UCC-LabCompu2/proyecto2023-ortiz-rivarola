@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="imagenes/icono.png">
 </head>
 
-<body onload=setInterval(animarBart,50)>
+<body onload=setInterval(animarBart,40)>
 
 <header>
     <nav id="barradeopciones">
@@ -75,6 +75,16 @@
     </div>
 </form>
 
+<img src="imagenes/edificio.png" alt="dos edificios" class="edificio" width="300" height="600">
+
+<div id="animacion">
+    <canvas id="myCanvas" class="canvasBart" width="1000px" height="500px">
+        Your browser does not support the HTML5 canvas tag.
+
+    </canvas>
+
+</div>
+
 <form id="PosicionFinal" class="PosicionFinal" name="PosicionFinal">
     <h2 class="posicionfinal">POSICIÓN FINAL</h2>
     <div id="po">
@@ -101,8 +111,7 @@
         <input id="totalP" type="text" name="posicion_total" class="BOTON2" disabled>
     </div>
 </form>
-<p>
-</p>
+
 
 <form id="Tiempo" class="TiempoFinal" name="TiempoFinal">
     <h2 class="tiempo">TIEMPO</h2>
@@ -124,19 +133,15 @@
         <p>
             El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
         </p>
+
         <button id="boton3" onclick="mostrar_Resultado(this.id)">
             <a id="C3" href="#Tiempo">Calcular</a>
         </button>
+
         <label for="totalT"></label>
         <input id="totalT" type="text" name="tiempo_total" class="BOTON3" disabled>
     </div>
 </form>
-
-<div id="animacion">
-    <canvas id="myCanvas" class="canvasBart" width="1000px" height="500px">
-        Your browser does not support the HTML5 canvas tag.
-    </canvas>
-</div>
 
 <dialog id="myDialog" class="Dialog">
     <h6>Error al ingresar datos!</h6>
