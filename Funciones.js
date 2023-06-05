@@ -3,64 +3,77 @@
  * @method Velocidad
  */
 
+let Velocidad = () => {
+    let re, re1;
+    let v = Number(document.VelocidadFinal.velocidadInicial.value);
+    let t= Number(document.VelocidadFinal.tiempo.value);
+    let g = 9.8;
 
-let Velocidad = (v, t) => {
-    let re, g;
     const vMin = 0;
     const vMax = 100;
     const tMax = 3600;
     const tMin = 0;
-    g = 9.8;
 
-    if (t < tMin || t > tMax || v < vMin || v > vMax) {
+    if (v < vMin || v > vMax) {
+        abrirDialog();
+    }
+    if (t < tMin || t > tMax) {
         abrirDialog();
     } else {
-        console.log(v,t)
-        re = v + (g * t);
+        console.log(v, t);
+        re1 = (g * t);
+        re = (v + re1);
         document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
     }
 }
+
 
 /**
  * Calcula Posicion Final
  * @method Posicion
  */
 
+let Posicion = () => {
+    let re;
+    let g = 9.8;
+    let v = Number(document.PosicionFinal.velocidadInicial.value);
+    let t = Number(document.PosicionFinal.tiempo.value);
 
-let Posicion = (v, t) => {
-    let re, g;
-    g = 9.8;
     const vMin = 0;
-    const vMax = 101;
-    const tMax = 3601;
+    const vMax = 100;
+    const tMax = 3600;
     const tMin = 0;
-
-    if (v < vMin || v >= vMax) {
-    abrirDialog();
+    if (v < vMin || v > vMax) {
+        abrirDialog();
     }
-    if (t < tMin || t >= tMax) {
-    abrirDialog();
+    if (t < tMin || t > tMax) {
+        abrirDialog();
+    } else {
+        console.log(v, t);
+        re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
+        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
     }
-    console.log(v,t);
-    re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
-    document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
 }
+
 
 /**
  * Calcula el tiempo final
  * @method Tiempo
- *
  */
-let Tiempo = (vi, vf) => {
-    let re, g;
+
+let Tiempo = () => {
+    let re;
+    let g = 9.8;
+    let vi = Number(document.TiempoFinal.velocidadInicial.value);
+    let vf = Number(document.TiempoFinal.velocidadFinal.value);
+
     const vMax = 100;
     const vMin = 0;
-    g = 9.8;
-    re = (vf - vi) / g;
-    if (re < 0) {
-        re = re * (-1);
+
+    if (vi < vMin || vi > vMax) {
+        abrirDialog();
     }
-    if (vi < vMin || vi > vMax || vf < vMin || vf > vMax) {
+    if (vf < vMin || vf > vMax) {
         abrirDialog();
     } else {
         re = (vf - vi) / g;
@@ -68,18 +81,17 @@ let Tiempo = (vi, vf) => {
             re = re * (-1);
         }
         console.log(vi, vf);
+        document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + "s";
     }
-    document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + "s";
 }
 
 /**
  * Oculta y Muestra el resultado de cada operacion
  * @method mostrar_Resultado
- * @param {string} id - Id del elemento input radio en html
+ * @param {string} id - Id del elemento input en html
  */
 
 let mostrar_Resultado = (id) => {
-
     if (id === "boton1") {
         document.getElementsByName("velocidad_total")[0].style.display = 'block';
     } else {
@@ -98,37 +110,32 @@ let mostrar_Resultado = (id) => {
 }
 
 /**
- * Función canva: animar imágen.
- * @method Canva
- * @param {string} Id - Id del elemento canva.
+ * Realiza un dibujo y lo posicionar de acuerdo a los valores ingresados por el usuario.
+ * @method animarBart
  */
 
-let y = 0;
-let dy = 2;
-
-function animarBart() {
-
+function animarBart(posX) {
 
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
 
+    //const posMax = 250;
+    // const posMin = document.PosicionFinal.posicion_total.value;
+    const anchoMax = canvas.width;
+
     let img = new Image();
     img.src = "imagenes/bart.png";
 
-    img.onload = function () {
-        canvas.width = canvas.width;
-        ctx.drawImage(img, 300, y, 320, 250);
+    console.log(posX);
+
+    if (posX < 0 || posX >= anchoMax) {
+        openDialog();
+    }else {
+        img.onload = function () {
+            canvas.width = canvas.width;
+            ctx.drawImage(img, posX, 0, 320, 250);
+        }
     }
-
-
-    y += dy;
-
-    console.log("La coordenada de y es: " + y);
-    if (y > canvas.width) {
-        y = 0;
-    }
-
-
 }
 
 /**
@@ -144,8 +151,8 @@ let abrirDialog = () => {
 /**
  * Cierra mensajes de error
  * @method cerrarDialog
- *
  */
+
 let cerrarDialog = () => {
     const dialog = document.getElementById("myDialog");
     dialog.close();

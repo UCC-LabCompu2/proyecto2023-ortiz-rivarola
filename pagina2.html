@@ -24,7 +24,7 @@
     <link rel="shortcut icon" href="imagenes/icono.png">
 </head>
 
-<body onload=setInterval(animarBart,40)>
+<body>
 
 <header>
     <nav id="barradeopciones">
@@ -53,13 +53,12 @@
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" name="velocidadInicial"
-                   onchange="Velocidad(velocidadInicial.value, tiempo.value)"/>
+            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()"/>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" name="tiempo" onchange="Velocidad(velocidadInicial.value, tiempo.value)">
+            <input id="time" type="number" name="tiempo" onchange="Velocidad()">
             s
         </p>
         <p>
@@ -75,29 +74,23 @@
     </div>
 </form>
 
-<img src="imagenes/edificio.png" alt="dos edificios" class="edificio" width="300" height="600">
-
-<div id="animacion">
-    <canvas id="myCanvas" class="canvasBart" width="1000px" height="500px">
-        Your browser does not support the HTML5 canvas tag.
-
-    </canvas>
-
-</div>
-
 <form id="PosicionFinal" class="PosicionFinal" name="PosicionFinal">
     <h2 class="posicionfinal">POSICIÓN FINAL</h2>
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" name="velocidadInicial"
-                   onchange="Posicion(velocidadInicial.value, tiempo.value)"/>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()"/>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" name="tiempo" onchange="Posicion(velocidadInicial.value, tiempo.value)"/>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion()"/>
             s
+        </p>
+        <p>
+            <label for="altura">Y<sub>o</sub>: </label>
+            <input id="altura" type="number" name="altura" onchange="Posicion()"/>
+            m
         </p>
         <p>
             El valor de la gravedad es de 9.8 m/s <sup> 2 </sup>
@@ -109,6 +102,12 @@
         </p>
         <label for="totalP"></label>
         <input id="totalP" type="text" name="posicion_total" class="BOTON2" disabled>
+
+        <p>
+            <button id="botonCanvas" name="botonCanvas" onclick="animarBart(altura.value)">
+                <a id="bc" href="#myCanvas">Animacion</a>
+            </button>
+        </p>
     </div>
 </form>
 
@@ -118,15 +117,13 @@
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" name="velocidadInicial"
-                   onchange="Tiempo(velocidadInicial.value, velocidadFinal.value)"/>
+            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" name="velocidadFinal"
-                   onchange="Tiempo(velocidadInicial.value, velocidadFinal.value)"/>
+            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()"/>
             m/s
 
         </p>
@@ -142,6 +139,17 @@
         <input id="totalT" type="text" name="tiempo_total" class="BOTON3" disabled>
     </div>
 </form>
+
+<div id="edificio" class="edificio">
+    <img src="imagenes/edificio.png" alt="edificio">
+</div>
+
+
+<div id="animacion">
+    <canvas id="myCanvas" class="canvasBart" width="500px" height="500px">
+        Your browser does not support the HTML5 canvas tag.
+    </canvas>
+</div>
 
 <dialog id="myDialog" class="Dialog">
     <h6>Error al ingresar datos!</h6>

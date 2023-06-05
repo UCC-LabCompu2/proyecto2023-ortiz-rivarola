@@ -244,7 +244,7 @@ label {
 }
 
 .posicionfinal, .tiempo, .velocidadfinal {
-    margin-top: 3em;
+    margin-top: 5em;
 }
 
 .BOTON1, .BOTON2, .BOTON3 {
@@ -259,24 +259,20 @@ label {
     float: right;
     background-color: plum;
     margin-left: 50em;
-    width: 500px;
-    height: 600px;
     margin-top: 0;
-
-
 }
 
-#animacion{
+#animacion {
     display: flex;
     flex-direction: row;
     justify-items: auto;
     align-items: center;
-    position: absolute;
 }
 
-.edificio{
-    margin-left: 30em;
-    padding-bottom: 10px;
+.edificio {
+    width: 250px;
+    height: 250px;
+    margin-left: 20em;
     position: absolute;
 }
 
