@@ -6,7 +6,7 @@
 let Velocidad = () => {
     let re, re1;
     let v = Number(document.VelocidadFinal.velocidadInicial.value);
-    let t= Number(document.VelocidadFinal.tiempo.value);
+    let t = Number(document.VelocidadFinal.tiempo.value);
     let g = 9.8;
 
     const vMin = 0;
@@ -38,7 +38,7 @@ let Posicion = () => {
     let g = 9.8;
     let v = Number(document.PosicionFinal.velocidadInicial.value);
     let t = Number(document.PosicionFinal.tiempo.value);
-    let a = Number (document.PosicionFinal.altura.value);
+    let a = Number(document.PosicionFinal.altura.value);
 
     const vMin = 0;
     const vMax = 100;
@@ -54,9 +54,10 @@ let Posicion = () => {
     }
     if (t < tMin || t > tMax) {
         abrirDialog();
-    } if (a < 0 || a >= anchoMax) {
+    }
+    if (a < 0 || a >= anchoMax) {
         abrirDialog();
-    }else {
+    } else {
         console.log(v, t);
         re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
         document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
@@ -140,7 +141,7 @@ function animarBart(posX) {
 
     if (posX < 0 || posX >= anchoMax) {
         abrirDialog();
-    }else {
+    } else {
         img.onload = function () {
             canvas.width = canvas.width;
             ctx.drawImage(img, posX, 0, 320, 250);
