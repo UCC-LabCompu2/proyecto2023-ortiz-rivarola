@@ -38,17 +38,25 @@ let Posicion = () => {
     let g = 9.8;
     let v = Number(document.PosicionFinal.velocidadInicial.value);
     let t = Number(document.PosicionFinal.tiempo.value);
+    let a = Number (document.PosicionFinal.altura.value);
 
     const vMin = 0;
     const vMax = 100;
     const tMax = 3600;
     const tMin = 0;
+
+    let canvas = document.getElementById("myCanvas");
+    let ctx = canvas.getContext("2d");
+    const anchoMax = canvas.width;
+
     if (v < vMin || v > vMax) {
         abrirDialog();
     }
     if (t < tMin || t > tMax) {
         abrirDialog();
-    } else {
+    } if (a < 0 || a >= anchoMax) {
+        abrirDialog();
+    }else {
         console.log(v, t);
         re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
         document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
@@ -66,6 +74,7 @@ let Tiempo = () => {
     let g = 9.8;
     let vi = Number(document.TiempoFinal.velocidadInicial.value);
     let vf = Number(document.TiempoFinal.velocidadFinal.value);
+
 
     const vMax = 100;
     const vMin = 0;
@@ -110,8 +119,9 @@ let mostrar_Resultado = (id) => {
 }
 
 /**
- * Realiza un dibujo y lo posicionar de acuerdo a los valores ingresados por el usuario.
+ * Realiza un dibujo y lo posiciona de acuerdo a los valores ingresados por el usuario.
  * @method animarBart
+ * @param {number} posX - Contiene el valor del input que ingreso el usuario
  */
 
 function animarBart(posX) {
@@ -129,7 +139,7 @@ function animarBart(posX) {
     console.log(posX);
 
     if (posX < 0 || posX >= anchoMax) {
-        openDialog();
+        abrirDialog();
     }else {
         img.onload = function () {
             canvas.width = canvas.width;
