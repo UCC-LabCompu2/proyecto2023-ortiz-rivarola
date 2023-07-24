@@ -21,7 +21,7 @@ let Velocidad = () => {
         document.VelocidadFinal.velocidad_total.value = "";
     }
     if (isNaN(v) || v < vMin || v > vMax) {
-            alert("El valor ingresado es incorrecto");
+        alert("El valor ingresado es incorrecto");
         document.VelocidadFinal.velocidadInicial.value = "";
         document.VelocidadFinal.velocidad_total.value = "";
     } else {
@@ -161,7 +161,8 @@ function animarBart(posX) {
     console.log(posX);
 
     if (posX < 0 || posX >= anchoMax) {
-        abrirDialog();
+        alert("El valor ingresado es incorrecto");
+        document.PosicionFinal.altura.value = "";
     } else {
         img.onload = function () {
             canvas.width = canvas.width;
