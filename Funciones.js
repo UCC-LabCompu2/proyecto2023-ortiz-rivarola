@@ -15,6 +15,10 @@ let Velocidad = () => {
     t = Number(document.VelocidadFinal.tiempo.value);
     v = Number(document.VelocidadFinal.velocidadInicial.value);
 
+    console.log(v, t);
+    re = v + (g * t);
+    document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + " m/s";
+
     if (isNaN(t) || t < tMin || t > tMax) {
         alert("El valor ingresado es incorrecto");
         document.VelocidadFinal.tiempo.value = "";
@@ -24,20 +28,21 @@ let Velocidad = () => {
         alert("El valor ingresado es incorrecto");
         document.VelocidadFinal.velocidadInicial.value = "";
         document.VelocidadFinal.velocidad_total.value = "";
-    } else {
-        console.log(v, t);
-        re = v + (g * t);
-        document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + " m/s";
     }
 }
 
+/**
+ * Calcula Posicion Final
+ * @method verLetra
+ * @param {string} id - Id del elemento input e html
+ * @param {number} value - Contiene el valor del input que ingreso el usuario
+ */
 let verLetra = (id, value) => {
     if (isNaN(value)) {
         alert("Se deben ingresar únicamente números");
         document.getElementById(id).value = "";
     }
 }
-
 
 /**
  * Calcula Posicion Final
@@ -56,9 +61,13 @@ let Posicion = () => {
     const tMax = 3600;
     const tMin = 0;
 
+    console.log(v, t);
+    re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
+    document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + " m";
+
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
-    const anchoMax = canvas.width;
+    const altoMax = 321;
 
     if (isNaN(v) || v < vMin || v > vMax) {
         alert("El valor ingresado es incorrecto");
@@ -70,14 +79,10 @@ let Posicion = () => {
         document.PosicionFinal.tiempo.value = "";
         document.PosicionFinal.posicion_total.value = "";
     }
-    if (a < 0 || a >= anchoMax) {
+    if (a < 0 || a >= altoMax) {
         alert("El valor ingresado es incorrecto");
         document.PosicionFinal.altura.value = "";
         document.PosicionFinal.posicion_total.value = "";
-    } else {
-        console.log(v, t);
-        re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
-        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + " m";
     }
 }
 
@@ -97,6 +102,13 @@ let Tiempo = () => {
     const vMax = 100;
     const vMin = 0;
 
+    console.log(vi, vf);
+    re = (vf - vi) / g;
+    if (re < 0) {
+        re = re * (-1);
+    }
+    document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + " s";
+
     if (isNaN(vi) || vi < vMin || vi > vMax) {
         alert("El valor ingresado es incorrecto");
         document.TiempoFinal.velocidadInicial.value = "";
@@ -106,13 +118,6 @@ let Tiempo = () => {
         alert("El valor ingresado es incorrecto");
         document.TiempoFinal.velocidadFinal.value = "";
         document.TiempoFinal.tiempo_total.value = "";
-    } else {
-        re = (vf - vi) / g;
-        if (re < 0) {
-            re = re * (-1);
-        }
-        console.log(vi, vf);
-        document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + " s";
     }
 }
 
@@ -146,29 +151,34 @@ let mostrar_Resultado = (id) => {
  * @param {number} posX - Contiene el valor del input que ingreso el usuario
  */
 
-function animarBart(posX) {
+var y = 0;
+var dy = 2;
+function animarBart(posY) {
 
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
-
-    //const posMax = 250;
-    // const posMin = document.PosicionFinal.posicion_total.value;
-    const anchoMax = canvas.width;
+    const altoMax = 321;
 
     let img = new Image();
     img.src = "imagenes/bart.png";
 
-    console.log(posX);
+    console.log(posY);
+    y += dy;
+    console.log("La coordenada Y es: " + y);
+    if (y > canvas.height) { //reseteando la variable, no toma valores tan grandes
+        y = 0;
+    }
 
-    if (posX < 0 || posX >= anchoMax) {
+    if (posY < 0 || posY >= altoMax) {
         alert("El valor ingresado es incorrecto");
         document.PosicionFinal.altura.value = "";
     } else {
         img.onload = function () {
             canvas.width = canvas.width;
-            ctx.drawImage(img, posX, 0, 320, 250);
+            ctx.drawImage(img, 10, posY, 150, 150);
         }
     }
+
 }
 
 
