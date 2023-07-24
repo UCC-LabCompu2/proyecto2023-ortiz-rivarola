@@ -4,26 +4,37 @@
  */
 
 let Velocidad = () => {
-    let re, re1;
-    let v = Number(document.VelocidadFinal.velocidadInicial.value);
-    let t = Number(document.VelocidadFinal.tiempo.value);
-    let g = 9.8;
-
+    let v;
+    let t;
+    let re;
     const vMin = 0;
     const vMax = 100;
     const tMax = 3600;
     const tMin = 0;
+    const g = 9.8;
+    t = Number(document.VelocidadFinal.tiempo.value);
+    v = Number(document.VelocidadFinal.velocidadInicial.value);
 
-    if (v < vMin || v > vMax) {
-        abrirDialog();
+    if (isNaN(t) || t < tMin || t > tMax) {
+        alert("El valor ingresado es incorrecto");
+        document.VelocidadFinal.tiempo.value = "";
+        document.VelocidadFinal.velocidad_total.value = "";
     }
-    if (t < tMin || t > tMax) {
-        abrirDialog();
+    if (isNaN(v) || v < vMin || v > vMax) {
+            alert("El valor ingresado es incorrecto");
+        document.VelocidadFinal.velocidadInicial.value = "";
+        document.VelocidadFinal.velocidad_total.value = "";
     } else {
         console.log(v, t);
-        re1 = (g * t);
-        re = (v + re1);
-        document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + "m/s";
+        re = v + (g * t);
+        document.VelocidadFinal.velocidad_total.value = Math.round(re * 1000) / 1000 + " m/s";
+    }
+}
+
+let verLetra = (id, value) => {
+    if (isNaN(value)) {
+        alert("Se deben ingresar únicamente números");
+        document.getElementById(id).value = "";
     }
 }
 
@@ -49,18 +60,24 @@ let Posicion = () => {
     let ctx = canvas.getContext("2d");
     const anchoMax = canvas.width;
 
-    if (v < vMin || v > vMax) {
-        abrirDialog();
+    if (isNaN(v) || v < vMin || v > vMax) {
+        alert("El valor ingresado es incorrecto");
+        document.PosicionFinal.velocidadInicial.value = "";
+        document.PosicionFinal.posicion_total.value = "";
     }
-    if (t < tMin || t > tMax) {
-        abrirDialog();
+    if (isNaN(t) || t < tMin || t > tMax) {
+        alert("El valor ingresado es incorrecto");
+        document.PosicionFinal.tiempo.value = "";
+        document.PosicionFinal.posicion_total.value = "";
     }
     if (a < 0 || a >= anchoMax) {
-        abrirDialog();
+        alert("El valor ingresado es incorrecto");
+        document.PosicionFinal.altura.value = "";
+        document.PosicionFinal.posicion_total.value = "";
     } else {
         console.log(v, t);
         re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
-        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + "m";
+        document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + " m";
     }
 }
 
@@ -80,18 +97,22 @@ let Tiempo = () => {
     const vMax = 100;
     const vMin = 0;
 
-    if (vi < vMin || vi > vMax) {
-        abrirDialog();
+    if (isNaN(vi) || vi < vMin || vi > vMax) {
+        alert("El valor ingresado es incorrecto");
+        document.TiempoFinal.velocidadInicial.value = "";
+        document.TiempoFinal.tiempo_total.value = "";
     }
-    if (vf < vMin || vf > vMax) {
-        abrirDialog();
+    if (isNaN(vf) || vf < vMin || vf > vMax) {
+        alert("El valor ingresado es incorrecto");
+        document.TiempoFinal.velocidadFinal.value = "";
+        document.TiempoFinal.tiempo_total.value = "";
     } else {
         re = (vf - vi) / g;
         if (re < 0) {
             re = re * (-1);
         }
         console.log(vi, vf);
-        document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + "s";
+        document.TiempoFinal.tiempo_total.value = Math.round(re * 1000) / 1000 + " s";
     }
 }
 
@@ -149,25 +170,6 @@ function animarBart(posX) {
     }
 }
 
-/**
- * Mensajes de error cuando el usuario ingresa valores incorrectos
- * @method openDialog
- */
-
-let abrirDialog = () => {
-    const dialog = document.getElementById("myDialog");
-    dialog.showModal();
-}
-
-/**
- * Cierra mensajes de error
- * @method cerrarDialog
- */
-
-let cerrarDialog = () => {
-    const dialog = document.getElementById("myDialog");
-    dialog.close();
-}
 
 
 

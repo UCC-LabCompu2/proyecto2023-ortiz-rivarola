@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
           rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&family=Nunito:wght@300&display=swap"
-          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Caveat:wght@500&family=Kalam:wght@300&display=swap"
           rel="stylesheet">
 
@@ -53,12 +51,12 @@
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()"/>
+            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()" onchange="verLetra(this.id, this.value)"/>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" name="tiempo" onchange="Velocidad()">
+            <input id="time" type="number" name="tiempo" onchange="Velocidad()" onchange="verLetra(this.id, this.value)">
             s
         </p>
         <p>
@@ -71,6 +69,7 @@
         </p>
         <label for="totalV"></label>
         <input id="totalV" type="text" name="velocidad_total" class="BOTON1" disabled>
+
     </div>
 </form>
 
@@ -79,17 +78,17 @@
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()"/>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" name="tiempo" onchange="Posicion()"/>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
             s
         </p>
         <p>
             <label for="altura">Y<sub>o</sub>: </label>
-            <input id="altura" type="number" name="altura" onchange="Posicion()"/>
+            <input id="altura" type="number" name="altura" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
             m
         </p>
         <p>
@@ -117,13 +116,13 @@
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()"/>
+            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()" onchange="verLetra(this.id, this.value)"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()"/>
+            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()" onchange="verLetra(this.id, this.value)"/>
             m/s
 
         </p>
