@@ -103,7 +103,7 @@
         <input id="totalP" type="text" name="posicion_total" class="BOTON2" disabled>
 
         <p>
-            <button id="botonCanvas" name="botonCanvas" onclick="animarBart(altura.value)">
+            <button id="botonCanvas" name="botonCanvas" onclick="setInterval(animarBart, 20)">
                 <a id="bc" href="#myCanvas">Animacion</a>
             </button>
         </p>
@@ -149,16 +149,6 @@
         Your browser does not support the HTML5 canvas tag.
     </canvas>
 </div>
-
-<dialog id="myDialog" class="Dialog">
-    <h6>Error al ingresar datos!</h6>
-    <div id="advertencia">
-        <img src="imagenes/advertencia.png" alt="advertencia" class="adv">
-    </div>
-    <p> Las coordenadas ingresadas no son validas</p>
-    <button id="botonDialog" type="button" onclick="cerrarDialog()"> Cerrar</button>
-</dialog>
-
 
 <footer id="contacto">
     <div class="piedepagina">

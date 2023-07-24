@@ -276,18 +276,6 @@ label {
     position: absolute;
 }
 
-.Dialog {
-    width: 400px;
-    height: 200px;
-    border-radius: 10px;
-    text-align: center;
-    background-color: oldlace;
-}
-
-#botónDialog {
-    font-size: 15px;
-}
-
 .adv {
     margin-top: 1em;
     width: 50px;

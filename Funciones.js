@@ -148,39 +148,61 @@ let mostrar_Resultado = (id) => {
 /**
  * Realiza un dibujo y lo posiciona de acuerdo a los valores ingresados por el usuario.
  * @method animarBart
- * @param {number} posX - Contiene el valor del input que ingreso el usuario
+ * @param {number} posY - Contiene el valor del input que ingreso el usuario
  */
 
 var y = 0;
-var dy = 2;
-function animarBart(posY) {
+var dy;
+function animarBart() {
+    let posY = Number(document.PosicionFinal.altura.value);
 
-    let canvas = document.getElementById("myCanvas");
-    let ctx = canvas.getContext("2d");
-    const altoMax = 321;
+    const canvas = document.getElementById("myCanvas");
+    const ctx = canvas.getContext("2d");
 
     let img = new Image();
     img.src = "imagenes/bart.png";
 
-    console.log(posY);
-    y += dy;
-    console.log("La coordenada Y es: " + y);
-    if (y > canvas.height) { //reseteando la variable, no toma valores tan grandes
+    vi = parseFloat(document.getElementById("v0").value);
+
+    img.onload = function () {
+        canvas.width = canvas.width;
+        ctx.drawImage(img, 10, posY+y, 150, 150);
+    }
+
+    if (vi >= 50) {
+        dy = 3;
+        y = y + dy;
+    } else if (vi<50) {
+        dy = 1;
+        y = y + dy;
+    }
+
+    console.log("La coordenada X es: " + y);
+    if (y > canvas.width) {
         y = 0;
     }
 
-    if (posY < 0 || posY >= altoMax) {
-        alert("El valor ingresado es incorrecto");
-        document.PosicionFinal.altura.value = "";
-    } else {
-        img.onload = function () {
-            canvas.width = canvas.width;
-            ctx.drawImage(img, 10, posY, 150, 150);
-        }
-    }
+}
+/*let canvas = document.getElementById("myCanvas");
+let ctx = canvas.getContext("2d");
 
+let img = new Image();
+img.src = "imagenes/bart.png";
+
+img.onload = function () {
+    canvas.width = canvas.width;
+    ctx.drawImage(img, 10, posY+y, 150, 150);
 }
 
+y += dy;
+console.log("La coordenada Y es: " + y);
+if (y > canvas.width) { //reseteando la variable, no toma valores tan grandes
+    y = 0;
+}
 
+img.onload = function () {
+    canvas.width = canvas.width;
+    ctx.drawImage(img, x, 100);
+}*/
 
 
