@@ -1,5 +1,5 @@
 /**
- * Calcula Velocidad Final
+ * Calcula Velocidad Final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
  * @method Velocidad
  */
 
@@ -32,7 +32,7 @@ let Velocidad = () => {
 }
 
 /**
- * Calcula Posicion Final
+ * Si el usuario ingresa una letra, o un simbolo, envia mensaje de error y se blanquea el campo
  * @method verLetra
  * @param {string} id - Id del elemento input e html
  * @param {number} value - Contiene el valor del input que ingreso el usuario
@@ -45,7 +45,7 @@ let verLetra = (id, value) => {
 }
 
 /**
- * Calcula Posicion Final
+ * Calcula Posición Final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
  * @method Posicion
  */
 
@@ -64,6 +64,7 @@ let Posicion = () => {
     console.log(v, t);
     re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
     document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + " m";
+
 
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
@@ -84,11 +85,12 @@ let Posicion = () => {
         document.PosicionFinal.altura.value = "";
         document.PosicionFinal.posicion_total.value = "";
     }
+
 }
 
 
 /**
- * Calcula el tiempo final
+ * Calcula el Tiempo final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
  * @method Tiempo
  */
 
@@ -148,11 +150,10 @@ let mostrar_Resultado = (id) => {
 /**
  * Realiza un dibujo y lo posiciona de acuerdo a los valores ingresados por el usuario.
  * @method animarBart
- * @param {number} posY - Contiene el valor del input que ingreso el usuario
  */
 
-var y = 0;
-var dy;
+let y = 0;
+let dy;
 function animarBart() {
     let posY = Number(document.PosicionFinal.altura.value);
 
@@ -162,18 +163,19 @@ function animarBart() {
     let img = new Image();
     img.src = "imagenes/bart.png";
 
-    vi = parseFloat(document.getElementById("v0").value);
+    let v;
+    v = parseFloat(document.getElementById("v0").value);
 
     img.onload = function () {
         canvas.width = canvas.width;
         ctx.drawImage(img, 10, posY+y, 150, 150);
     }
 
-    if (vi >= 50) {
-        dy = 3;
+    if (v >= 50) {
+        dy = 4;
         y = y + dy;
-    } else if (vi<50) {
-        dy = 1;
+    } else if (v<50) {
+        dy = 2;
         y = y + dy;
     }
 
@@ -183,26 +185,20 @@ function animarBart() {
     }
 
 }
-/*let canvas = document.getElementById("myCanvas");
-let ctx = canvas.getContext("2d");
 
-let img = new Image();
-img.src = "imagenes/bart.png";
+/**
+ * Oculta y Muestra los resultados en la parte inferior
+ * @method mostrar_ocultar
+ * @param {string} id - Id del elemento input radio en html
+ */
 
-img.onload = function () {
-    canvas.width = canvas.width;
-    ctx.drawImage(img, 10, posY+y, 150, 150);
+let mostrar_ocultar = (id) => {
+    if (id === "mostrarResultados") {
+        document.getElementsByName("Result")[0].style.display = 'block';
+    } else {
+        document.getElementsByName("Result")[0].style.display = 'none';
+    }
 }
 
-y += dy;
-console.log("La coordenada Y es: " + y);
-if (y > canvas.width) { //reseteando la variable, no toma valores tan grandes
-    y = 0;
-}
-
-img.onload = function () {
-    canvas.width = canvas.width;
-    ctx.drawImage(img, x, 100);
-}*/
 
 

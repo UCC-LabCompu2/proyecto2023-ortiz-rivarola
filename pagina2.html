@@ -51,12 +51,12 @@
     <div id="vo">
         <p>
             <label for="vI">V<sub>o</sub>:</label>
-            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad()" onchange="verLetra(this.id, this.value)"/>
+            <input id="vI" type="number" name="velocidadInicial" onchange="Velocidad();verLetra(this.id, this.value)"/>
             m/s
         </p>
         <p>
             <label for="time">t: </label>
-            <input id="time" type="number" name="tiempo" onchange="Velocidad()" onchange="verLetra(this.id, this.value)">
+            <input id="time" type="number" name="tiempo" onchange="Velocidad();verLetra(this.id, this.value)">
             s
         </p>
         <p>
@@ -78,17 +78,17 @@
     <div id="po">
         <p>
             <label for="v0">V<sub>o</sub>:</label>
-            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
+            <input id="v0" type="number" name="velocidadInicial" onchange="Posicion(); verLetra(this.id, this.value)"/>
             m/s
         </p>
         <p>
             <label for="ti">t: </label>
-            <input id="ti" type="number" name="tiempo" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
+            <input id="ti" type="number" name="tiempo" onchange="Posicion(); verLetra(this.id, this.value)"/>
             s
         </p>
         <p>
             <label for="altura">Y<sub>o</sub>: </label>
-            <input id="altura" type="number" name="altura" onchange="Posicion()" onchange="verLetra(this.id, this.value)"/>
+            <input id="altura" type="number" name="altura" onchange="Posicion(); verLetra(this.id, this.value)"/>
             m
         </p>
         <p>
@@ -116,13 +116,13 @@
     <div id="t">
         <p>
             <label for="velocidadInicial">V<sub>o</sub>:</label>
-            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo()" onchange="verLetra(this.id, this.value)"/>
+            <input id="velocidadInicial" type="number" name="velocidadInicial" onchange="Tiempo(); verLetra(this.id, this.value)"/>
             m/s
 
         </p>
         <p>
             <label for="vf"> V<sub>f</sub>:</label>
-            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo()" onchange="verLetra(this.id, this.value)"/>
+            <input id="vf" type="number" name="velocidadFinal" onchange="Tiempo(); verLetra(this.id, this.value)"/>
             m/s
 
         </p>
@@ -148,6 +148,22 @@
     <canvas id="myCanvas" class="canvasBart" width="500px" height="500px">
         Your browser does not support the HTML5 canvas tag.
     </canvas>
+</div>
+
+<p>
+<input id="mostrarResultados" type="radio" name="rad_mostrar-ocultar" value="val_mostrar" onclick="mostrar_ocultar(this.id)">
+<label for="mostrarResultados"> Resultados </label>
+</p>
+<p>
+    <input id="ocultarResultados" type="radio" name="rad_mostrar-ocultar" value="val_ocultar" onclick="mostrar_ocultar(this.id)">
+    <label for="ocultarResultados"> Ocultar Resultados </label>
+</p>
+
+<div name="Result" class="color-div">
+    <p>Velocidad Inicial:  </p>
+    <p>Tiempo: </p>
+    <p>Altura: </p>
+    <p>Posicion Final: </p>
 </div>
 
 <footer id="contacto">

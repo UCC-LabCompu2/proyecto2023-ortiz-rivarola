@@ -291,3 +291,16 @@ h6 {
     margin-top: 15px;
 }
 
+.color-div{
+    margin-left: 20px;
+    background: lightsalmon;
+    padding-left: 15px;
+    max-width: 250px;
+    display: none;
+    border-radius: 10px;
+    position: relative;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
