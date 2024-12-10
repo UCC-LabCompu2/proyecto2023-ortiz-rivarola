@@ -1,8 +1,7 @@
 /**
- * Calcula Velocidad Final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
+ * Calcula Velocidad Final. Si ingresa el usuario valores incorrectos, blanquea los campos necesarios
  * @method Velocidad
  */
-
 let Velocidad = () => {
     let v;
     let t;
@@ -29,26 +28,25 @@ let Velocidad = () => {
         document.VelocidadFinal.velocidadInicial.value = "";
         document.VelocidadFinal.velocidad_total.value = "";
     }
-}
+};
 
 /**
- * Si el usuario ingresa una letra, o un simbolo, envia mensaje de error y se blanquea el campo
+ * Si el usuario ingresa una letra, o un símbolo, envía mensaje de error y se blanquea el campo
  * @method verLetra
- * @param {string} id - Id del elemento input e html
- * @param {number} value - Contiene el valor del input que ingreso el usuario
+ * @param {string} id - Id del elemento input en HTML
+ * @param {number} value - Contiene el valor del input que ingresó el usuario
  */
 let verLetra = (id, value) => {
     if (isNaN(value)) {
         alert("Se deben ingresar únicamente números");
         document.getElementById(id).value = "";
     }
-}
+};
 
 /**
- * Calcula Posición Final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
+ * Calcula Posición Final. Si ingresa el usuario valores incorrectos, blanquea los campos necesarios
  * @method Posicion
  */
-
 let Posicion = () => {
     let re;
     let g = 9.8;
@@ -64,7 +62,6 @@ let Posicion = () => {
     console.log(v, t);
     re = (v * t) + (0.5 * g * (Math.pow(t, 2)));
     document.PosicionFinal.posicion_total.value = Math.round(re * 1000) / 1000 + " m";
-
 
     let canvas = document.getElementById("myCanvas");
     let ctx = canvas.getContext("2d");
@@ -85,21 +82,17 @@ let Posicion = () => {
         document.PosicionFinal.altura.value = "";
         document.PosicionFinal.posicion_total.value = "";
     }
-
-}
-
+};
 
 /**
- * Calcula el Tiempo final. Si ingresa el usuario ingresa valores incorrectos, blanquea los campos necesarios
+ * Calcula el Tiempo final. Si ingresa el usuario valores incorrectos, blanquea los campos necesarios
  * @method Tiempo
  */
-
 let Tiempo = () => {
     let re;
     let g = 9.8;
     let vi = Number(document.TiempoFinal.velocidadInicial.value);
     let vf = Number(document.TiempoFinal.velocidadFinal.value);
-
 
     const vMax = 100;
     const vMin = 0;
@@ -121,14 +114,13 @@ let Tiempo = () => {
         document.TiempoFinal.velocidadFinal.value = "";
         document.TiempoFinal.tiempo_total.value = "";
     }
-}
+};
 
 /**
- * Oculta y Muestra el resultado de cada operacion
+ * Oculta y Muestra el resultado de cada operación
  * @method mostrar_Resultado
- * @param {string} id - Id del elemento input en html
+ * @param {string} id - Id del elemento input en HTML
  */
-
 let mostrar_Resultado = (id) => {
     if (id === "boton1") {
         document.getElementsByName("velocidad_total")[0].style.display = 'block';
@@ -145,60 +137,67 @@ let mostrar_Resultado = (id) => {
     } else {
         document.getElementsByName("tiempo_total")[0].style.display = 'none';
     }
-}
+};
 
 /**
  * Realiza un dibujo y lo posiciona de acuerdo a los valores ingresados por el usuario.
  * @method animarBart
  */
-
 let y = 0;
-let dy;
-function animarBart() {
-    let posY = Number(document.PosicionFinal.altura.value);
+let dy = 2;
 
+function animarBart() {
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
-
-    let img = new Image();
+    const img = new Image();
     img.src = "imagenes/bart.png";
 
-    let v;
-    v = parseFloat(document.getElementById("v0").value);
 
     img.onload = function () {
-        canvas.width = canvas.width;
-        ctx.drawImage(img, 10, posY+y, 150, 150);
-    }
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.drawImage(img, 10, y, 150, 150);
+    };
 
-    if (v >= 50) {
-        dy = 4;
-        y = y + dy;
-    } else if (v<50) {
-        dy = 2;
-        y = y + dy;
-    }
+    // Movimiento vertical hacia abajo
+    y += dy;
 
-    console.log("La coordenada X es: " + y);
-    if (y > canvas.width) {
-        y = 0;
-    }
 
+    if (y > canvas.height) {
+        y = -150;
+    }
 }
 
 /**
- * Oculta y Muestra los resultados en la parte inferior
- * @method mostrar_ocultar
- * @param {string} id - Id del elemento input radio en html
+ * Inicia la animación con un intervalo.
  */
-
-let mostrar_ocultar = (id) => {
-    if (id === "mostrarResultados") {
-        document.getElementsByName("Result")[0].style.display = 'block';
-    } else {
-        document.getElementsByName("Result")[0].style.display = 'none';
-    }
+function iniciarAnimacion() {
+    setInterval(animarBart, 20); // Llama repetidamente a animarBart cada 20ms
 }
+
+/**
+ * Oculta y muestra los resultados calculados en el cuadro de resultados.
+ * @method mostrar_ocultar
+ * @param {string} id - Id del botón de radio seleccionado
+ */
+let mostrar_ocultar = (id) => {
+    const resultDiv = document.getElementsByName("Result")[0];
+
+    if (id === "mostrarResultados") {
+
+        const velocidad = document.VelocidadFinal.velocidad_total.value || "No calculado";
+        const posicion = document.PosicionFinal.posicion_total.value || "No calculado";
+        const tiempo = document.TiempoFinal.tiempo_total.value || "No calculado";
+
+
+        document.getElementById("res_velocidadInicial").innerText = velocidad;
+        document.getElementById("res_tiempo").innerText = tiempo;
+        document.getElementById("res_posicion").innerText = posicion;
+
+        resultDiv.style.display = "block";
+    } else if (id === "ocultarResultados") {
+        resultDiv.style.display = "none";
+    }
+};
 
 
 
